@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="我的积分">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta content="telephone=no" name="format-detection" />
+    <title>帐吧-我的积分</title>
+    <style>
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {  margin: 0;  padding: 0;  border: 0;  outline: 0; }
+        html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {  -webkit-text-size-adjust: none; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block;  clear: both; }
+        body { font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;  -webkit-text-size-adjust: none;  color: rgb(46,46,46);  background:rgb(248,248,249);  -webkit-text-size-adjust: none;   font-size: .875rem;  line-height: 1.15; }
+        html{font-size:100%; }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+
+        h1, h2, h3, h4, h5, h6 {  font-size: 100%;  font-weight: normal; }
+        * {  margin: 0; padding: 0; }
+        li { list-style: none; }
+        .text-center {text-align: center; }
+        .text-left { text-align: left; }
+        .text-right {text-align: right; }
+        .text-points{ font-size:3.05rem; font-weight: 400 }
+        .text-no-sign{ color: rgb(250,100,78); background-color: rgba(255,216,40,.2); text-align: center; padding: 1rem}
+        .paleGreyThree{color:rgb(248,248,249)}
+
+        .margin-top-0_5rem{ margin-top: .5rem}
+        /**/
+        .container {  min-height: 100%;  padding-bottom: 3rem; }
+
+        /***/
+        .nav {  width: 100%;  height: 3rem;  display: flex; display: -webkit-flex;  justify-content: space-between; -webkit-justify-content: space-between}
+        .nav-left {  padding-left: 1rem;  padding-top: .75rem; }
+        .nav-right {  padding-right: 1rem;  padding-top: .75rem; }
+        .nav-head { padding-top: 1rem;  text-align: center; }
+
+        .panel{background: #2e2e2e;  padding: 1.375rem 1.125rem .75rem; color: white }
+        .panel-head{}
+        .panel-body{ padding:1rem 0 2rem; border-radius: .5rem; line-height: 1.5; }
+        .panel-foot{}
+
+
+        .list{ padding:0 1.625rem; background-color: #fff; }
+        .list-items{display: flex; display: -webkit-flex; justify-content: space-between;-webkit-justify-content: space-between;padding:1.5rem 0;border-top: 1px solid rgb(248,248,249) }
+        .list-items:first-child{margin-top: 0; border-top-color: transparent}
+        .items-tit{ font-size: 1rem}
+        .items-cell:first-child{}
+
+        .pop{color:rgb(250,100,78); box-shadow: 0 0 0 .075rem rgb(250,100,78) inset; border-radius: 999rem; padding:.375rem 1rem; font-size: .875rem}
+        .pop.pop-yellow{color:rgb(255,251,251); background-color: rgb( 46,46,46); box-shadow: none}
+        .add-tip{color: rgb(242,93,93); font-size: .875rem; padding-left: .5rem}
+
+        .more{ color:rgb(153,153,153); font-size: .75rem; padding: 1.5rem 0; text-align: center}
+
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px; background:rgb(248,248,249); z-index: 5}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header ">
+        <nav class="nav">
+            <div class="nav-left">我的积分</div>
+            <div class="nav-head"></div>
+            <div class="nav-right">积分记录</div>
+        </nav>
+    </header>
+
+    <!---->
+    <div class="panel">
+        <div class="panel-body text-center">
+            <div class="text-points">387465</div>
+            <div>没有网络时，无法获取积分</div>
+        </div>
+    </div>
+
+    <div class="text-no-sign">当前网络不可用，请检查你的网络！</div>
+
+    <!---card list-->
+    <div class="list ">
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">登陆</span> <span class="add-tip">+2</span></div>
+            <div class="items-cell "><span class="pop">今日已领取</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">手动记账一笔</span> <span class="add-tip">+2</span></div>
+            <div class="items-cell "><span class="pop">今日已领取</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">导入支付宝账单</span> <span class="add-tip">+50</span></div>
+            <div class="items-cell "><span class="pop pop-yellow">去导入</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">使用微信截图导入账单</span> <span class="add-tip">+50</span></div>
+            <div class="items-cell "><span class="pop pop-yellow">去导入</span> </div>
+        </div>
+    </div>
+
+    <!---card list-->
+    <div class="list margin-top-0_5rem">
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">完善昵称</span> <span class="add-tip">+15</span></div>
+            <div class="items-cell "><span class="pop">去完善</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">上传头像</span> <span class="add-tip">+15</span></div>
+            <div class="items-cell "><span class="pop">去上传</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">绑定手机号</span> <span class="add-tip">+100</span></div>
+            <div class="items-cell "><span class="pop pop-yellow">去绑定</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">绑定微信</span> <span class="add-tip">+100</span></div>
+            <div class="items-cell "><span class="pop ">已绑定</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">绑定QQ</span> <span class="add-tip">+100</span></div>
+            <div class="items-cell "><span class="pop">已绑定</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">设置记账提醒</span> <span class="add-tip">+20</span></div>
+            <div class="items-cell "><span class="pop pop-yellow">去设置</span> </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><span class="items-tit">开启通知</span> <span class="add-tip">+20</span></div>
+            <div class="items-cell "><span class="pop pop-yellow">去开通</span> </div>
+        </div>
+    </div>
+
+    <div class="more">加载更多</div>
+
+</div>
+
+
+</body>
+</html>

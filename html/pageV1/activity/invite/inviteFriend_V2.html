@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="邀请好友">
+    <meta name="description" content="邀请好友">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>邀请好友</title>
+    <style>
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        *{padding: 0;margin: 0;font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;animation: loadpage .25s; -webkit-animation: loadPage .25s; opacity:1 }
+        html{font-size:87.5%; line-height: 1.5;   }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+
+
+        body{ background-color: #fff;color: #5a5753; padding-bottom: 1rem; }
+
+        .box{position: relative; margin:0  1.5rem .5rem; }
+        .box img{ display: block;}
+        .text-red{color:#f25d5d}
+        .text-center{ text-align: center}
+
+        .box-column{ display: flex; display: -webkit-flex; justify-content: space-around;-webkit-justify-content: space-around ; padding:.5rem .5rem 1.5rem}
+
+
+        .text-tit{ font-size: 1.75rem; text-align: center; font-family: HYRunYan; padding-top: 1rem; color: #2e2e2e }
+        .text-tit span{font-family: HYRunYan}
+        .text-tit-sub{ font-size: 1rem; text-align: center; font-family: HYRunYan; font-weight: 200; padding-bottom: 1.5rem; padding-top: .25rem; color: #2e2e2e }
+        .panel-banner{ padding-top: 1rem; padding-bottom: 2rem}
+
+        .btn{ 
+            text-decoration: none;
+            background:#2e2e2e; /* 一些不支持背景渐变的浏览器 */
+            background: -moz-linear-gradient(top, #2e2e2e 0%, #2e2e2e 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e2e2e), color-stop(100%,#2e2e2e));
+            background: -webkit-linear-gradient(top, #2e2e2e 0%,#2e2e2e 100%);
+            background: -o-linear-gradient(top, #2e2e2e 0%,#2e2e2e 100%);
+            background: -ms-linear-gradient(top, #2e2e2e 0%,#2e2e2e 100%);
+            background: linear-gradient(to bottom, #2e2e2e 0%,#2e2e2e 100%);
+            color: #fff;
+            font-size: 1.125rem;
+            padding: 1rem 8rem;
+        }
+
+        .btn.disable{ 
+            background:#ccc; /* 一些不支持背景渐变的浏览器 */
+            background: -moz-linear-gradient(top, #ccc 0%, #ccc 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ccc), color-stop(100%,#ccc));
+            background: -webkit-linear-gradient(top, #ccc 0%,#ccc 100%);
+            background: -o-linear-gradient(top, #ccc 0%,#ccc 100%);
+            background: -ms-linear-gradient(top, #ccc 0%,#ccc 100%);
+            background: linear-gradient(to bottom, #ccc 0%,#ccc 100%);
+            color: #666;
+        }
+
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px;  background: #fff; z-index: 5}
+            .text-tit-sub{ padding-bottom:2rem; padding-top: 1rem}
+            .box-column{padding:.5rem .5rem 4rem}
+            .box.top-box{ padding-top: 2rem}
+        }
+
+      
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/invite/int_fri_01_v2.png" width="100%">
+
+    <div class="box top-box">
+
+        <div class="text-tit">
+            我已使用账吧<span class="text-red">66</span>天
+        </div>
+        <div class="text-tit-sub">一款好用的记账APP，一次可同步5000条记录</div>
+        <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/invite/int_06_v2.png" width="100%">
+        <div class="box-column">
+            <div>智能速记</div>
+            <div>统计分析</div>
+            <div>安全私密</div>
+        </div>
+
+    </div>
+
+    <div class="panel text-center panel-banner">
+        <a href="javascript:;" class="btn">分享给好友</a>
+    </div>
+</div>
+
+
+
+
+
+<script src="http://cdn.51zhangba.com/cdn/lib/zepto/zepto.min.js"></script>
+
+<script>
+    (function(){
+        var preventDefault = function (e) {
+            e.preventDefault();
+        };
+
+        //TODO 重新设置alert样式
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+        window.confirm = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.confirm(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+
+
+
+        $.ajax({
+            url:'http://47.98.192.11:9080/api/user/queryUserInfo',
+            type:'GET',
+            success:function(data){
+                console.log(data)
+            }
+        });
+
+    })(window);
+
+</script>
+
+</html>

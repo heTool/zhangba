@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="我的提现">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta content="telephone=no" name="format-detection" />
+    <title>帐吧-再次提现</title>
+    <style>
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {  margin: 0;  padding: 0;  border: 0;  outline: 0; }
+        html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {  -webkit-text-size-adjust: none; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block;  clear: both; }
+        body { font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;  -webkit-text-size-adjust: none;  color: rgb(46,46,46);  background:rgb(248,248,249);  -webkit-text-size-adjust: none;   font-size: .875rem;  line-height: 1.15; }
+        html{font-size:100%; }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+
+        h1, h2, h3, h4, h5, h6 {  font-size: 100%;  font-weight: normal; }
+        * {  margin: 0; padding: 0; }
+        li { list-style: none; }
+        .text-center {text-align: center; }
+        .text-left { text-align: left; }
+        .text-right {text-align: right; }
+        .text-points{ font-size:3.05rem; font-weight: 400 }
+        .text-no-sign{ color: rgb(250,100,78); background-color: rgba(255,216,40,.2); text-align: center; padding: 1rem}
+        .paleGrey{color:rgb(204,204,204)}
+        .padding-left-1rem{ padding-left:1rem}
+
+        .margin-top-0_5rem{ margin-top: .5rem}
+        /**/
+        .container {  min-height: 100%;  padding-bottom: 3rem; }
+
+        /***/
+        .nav {  width: 100%;  height: 3rem;  display: flex; display: -webkit-flex;  justify-content: space-between; -webkit-justify-content: space-between}
+        .nav-left {  padding-left: 1rem;  padding-top: .75rem; }
+        .nav-right {  padding-right: 1rem;  padding-top: .75rem; }
+        .nav-head { padding-top: 1rem;  text-align: center; }
+
+        .panel{background: url('http://cdn.51zhangba.com/cdn/images/pageV1/app/integral.v2/bg_1125x720.jpg') left top no-repeat; background-size: 100% auto;  padding: 1.375rem 1.125rem .75rem; color: white }
+        .panel-head{}
+        .panel-body{ padding:.75rem 0 0; border-radius: .5rem; line-height: 1.5; }
+        .panel-foot{}
+
+
+        .list{ padding:0 1.625rem; background-color: #fff; }
+        .list-info{padding:0 1.625rem;}
+        .list-items{display: flex; display: -webkit-flex; justify-content: flex-start;-webkit-justify-content: flex-start;padding:1.125rem 0;border-top: 1px solid rgb(248,248,249);  }
+        .list-items:first-child{margin-top: 0; border-top-color: transparent}
+        .list-items .items-cell:last-child{ width: 70%; padding-left: 1rem; position: relative;  top: -.075rem}
+        .items-cell .clear-input{ position: absolute; right: -1rem; top: 0; background-color:rgba(204,204,204,.8);color:rgba(248,248,248,.8); border-radius: 999rem; display: block; width: 1rem ;height: 1rem; text-align: center; line-height: 1 ; display: none}
+        .list-info .list-items{justify-content: space-between;-webkit-justify-content: space-between}
+        .list-info .list-items .items-cell:last-child{ width: auto; padding-left: 0} 
+        .items-tit{ font-size: 1rem}
+        .list-items.bg-transparent{ background-color:transparent;}
+        .items-cell:first-child{}
+
+        .pop{color:rgb(250,100,78); box-shadow: 0 0 0 1px rgb(250,100,78) inset; border-radius: 999rem; padding:.375rem 1rem; font-size: .875rem}
+        .pop.pop-yellow{color:rgb(255,251,251); background-color: rgb( 46,46,46); box-shadow: 0 0 0 1px rgb( 46,46,46)}
+        .add-tip{color: rgb(242,93,93); font-size: .875rem; padding-left: .5rem}
+
+
+        .btn-items{ padding: 1rem 0 2rem}
+        .btn-submit{
+            background-color:rgb(46,46,46);
+            border-radius: .125rem;
+            color: white; 
+            box-shadow: none; 
+            padding:.75rem 1.75rem;
+            font-size: 1.125rem;
+            text-decoration: none;
+            margin: 0 auto;
+            width: 68%;
+            display: block;
+            text-align: center
+        }
+
+        input.form-control{ background: transparent; border: none; width: 96%; padding: 0 2% ; display: inline-block; margin-left: 1rem; font-size: .875rem}
+        input.form-control::-webkit-input-placeholder,
+        input.form-control::-moz-placeholder,
+        input.form-control::placeholder{ color: rgb(204,204,204)}
+
+        .more{ color:rgb(153,153,153); font-size: .75rem; padding: 1.5rem 0; text-align: center}
+
+
+        .dialog{ background-color: rgba(46,46,46,.7); position: fixed; left: 0; top: 0; width: 100%; height: 100%}
+        .dialog-panel{width: 80%; position: fixed; left: 10%; top: 20%; background-color: white; border-radius:.5rem;  }
+        .dialog-panel-head{ text-align: center; padding: 1rem; font-size: 1.125rem;border-bottom:1px solid rgb(241,241,241);margin: 0 2%;}
+        .dialog-panel-body{ padding: 2rem 1rem 2rem; font-size: .925rem; line-height: 1.5}
+        .dialog-panel-foot{ border-top:1px solid rgb(241,241,241);margin: 0 2%;}
+        .btn-dialog-foot{ text-decoration: none; text-align: center; color: rgb(46,46,46); font-size: 1.125rem; display: inline-block; text-align: center; width: 100%;  padding: .75rem 0}
+
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px; background:rgb(248,248,249); z-index: 5}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header ">
+        <nav class="nav">
+            <div class="nav-left">我的积分</div>
+            <div class="nav-head"></div>
+            <div class="nav-right">积分记录</div>
+        </nav>
+    </header>
+
+
+    <!---card list-->
+    <div class="list ">
+        <div class="list-items">
+            <div class="items-cell "><label for="zfb">到账支付宝</label></div>
+            <div class="items-cell ">
+                <input type="text" class="form-control" id="zfb"   placeholder="输入你的支付宝账号" value="234235458@qq.com">
+                <label class="clear-input" for="zfb" style="display: block">×</label>
+            </div>
+        </div>
+        <div class="list-items">
+            <div class="items-cell "><label for="zfb-name">支付宝姓名</label></div>
+            <div class="items-cell ">
+                <input type="text" class="form-control" id="zfb-name" placeholder="输入你在支付宝中的姓名">
+                <label class="clear-input" for="zfb-name">×</label>
+             </div>
+        </div>
+    </div>
+
+    <div class="list-info">
+        <div class="list-items bg-transparent">
+            <div class="items-cell ">提现金额 <span class="padding-left-1rem">315.00</span></div>
+            <div class="items-cell paleGrey">手续费：0.00 </div>
+        </div>
+    </div>
+
+
+    <div class="btn-items">
+        <a href="javascript:;" class=" btn-submit">提现</a>
+    </div>
+
+</div>
+
+
+<div class="dialog">
+    <div class="dialog-panel">
+        <div class="dialog-panel-body text-center">
+            我们支持提现到支付宝<br>
+            为确保提现准确<br>请输入你的支付宝账号以及姓名
+        </div>
+        <div class="dialog-panel-foot">
+            <a href="javascript:;" class="btn btn-dialog-foot">确定</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.ylsjf.com/cdn/lib/zepto/zepto.min.js"></script>
+<script>
+    $('.form-control').on('focus',function(){
+        $(this).next('.clear-input').show();
+    });
+    $('.form-control').on('blur',function(){
+        if($(this).val()==''){
+            $(this).next('.clear-input').hide();
+        }
+    });
+
+    $('.clear-input').on('click',function(){
+        $(this).prev('.form-control').val('');
+    });
+</script>
+
+</body>
+</html>

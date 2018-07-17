@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="记账挑战，赢现金大奖">
+    <meta name="description" content="记账挑战，赢现金大奖">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>记账挑战，赢现金大奖</title>
+    <style>
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        *{padding: 0;margin: 0;font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;animation: loadpage .25s; -webkit-animation: loadPage .25s; opacity:1 }
+        html{font-size:87.5%; line-height: 1.5;   }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+        body{ background-color: #f6f6f6;color: #5a5753; padding-bottom: 1rem; }
+
+        .full-body{
+            position: fixed !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 0% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+        }
+
+        #footerFixed{
+            position: absolute;
+        }
+
+        .block p{ margin-top: .25rem}
+        .box{position: relative; width: 100%; overflow: hidden}
+        .box img{ display: block;}
+        .text-add a{ color: white; text-decoration: none}
+        .text-grey{color:#999}
+        .text-white{ color: #fff}
+        .clearfix:after{content: '';display: block; height: 0;width: 0;overflow: hidden; clear: both}
+        .text-tips{  font-size: .75rem;}
+        .text-min{  font-size: .875rem;}
+        .text-max{ font-size: 1.75rem}
+        .text-top{ font-size: 2.5rem; line-height: 1; font-weight: 600; color: #2a2a2a}
+        .text-normal{ font-size: 1.375rem}
+
+        .text-red{color:#ff1500}
+        .text-blue{color:#65b6f9}
+        .text-brown{color:#8d6b5c}
+        .text-black{color:#2a2a2a}
+        .text-orange{color: #e7544e}
+        .text-left{ text-align: left}
+        .text-right{ text-align: right}
+        .text-center{ text-align: center}
+        .text-modify{ font-size: 1rem; color: #43564f; border-bottom: 1px solid #43564f; text-decoration: none }
+        .padding-top-1rem{ padding-top: 1rem}
+        .padding-bottom-1rem{ padding-bottom: 1rem}
+        .padding-top-0_5rem{ padding-top: .5rem}
+        .padding-bottom-0_5rem{ padding-bottom: .5rem}
+        .padding-left-1rem{ padding-left: 1rem}
+        .padding-right-1rem{ padding-right: 1rem}
+        .padding-top-2rem{ padding-top: 2rem}
+        .padding-bottom-2rem{ padding-bottom: 2rem}
+        .padding-top-3rem{ padding-top: 3rem}
+        .padding-1rem{ padding: 1rem}
+        .border-top-solid{ border-top:solid 1px #ffe498}
+
+        /*****/
+        .footer{text-align: center;padding: 1.5rem 0 1.5rem; background-color: #fff; margin-bottom: -2rem}
+        .footer img{ max-width: 8rem; display: block; margin: 0 auto}
+
+        table{ margin: 0 auto}
+        table th{ font-weight: normal}
+        table{}
+
+
+        /****/
+        .box-content{ position: relative }
+        .box-dsp{ position: absolute; left: 0; top: 0; width: 100%; text-align: center }
+        .box-dsp img{ display:block; width: 90%;margin: 0 auto }
+
+
+        .text-tel{ font-size: 1rem;}
+        .text-info{ font-size: 1rem;color: #FF4F57}
+        .text-val-total{ font-size: 3.5rem; color: #f2e4bd; padding: .5rem 0;}
+        .text-val-bag{ font-size: 3rem; color: #c4403b; line-height: 1}
+        .text-congratulations{ font-size: 1.5rem; color: #f2e4bd; font-weight: bold; }
+
+        .text-gold{ color: #f2e4bd }
+        .text-val-over{ font-size: 1.75rem; color: #999}
+
+        .dialog-share-btn{width: 100%; top: 90%; left: 5%; position: fixed}
+
+
+        .control-bottom{position: fixed;bottom: 0;width: 90%;z-index: 5; padding: 1rem 5%; background-color: white;left: 0; border-top:1px solid #ddd;transform: translateY(7.5em);-webkit-transform: translateY(7.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom.active{opacity: .9; transform: translateY(0);-webkit-transform: translateY(0);}
+        .btn-control{ display: block; border-radius: .25rem;text-align: center; text-decoration: none; padding: .725rem 0;width: 90%; background-color: #cc4f49; color: white; margin: 0 auto; font-size: 1.25rem;}
+        .btn-control.disable{background-color: #999; color: #666;border-bottom: 1px solid #ccc;}
+
+        .btn-rule{ position: fixed; right: 0; top: 2.5rem; background-color:rgba(241,55,55,.75); color: #fff;  border-right: 0; border-radius: 999rem 0 0 999rem;
+            word-break: break-all;white-space: pre-wrap; width: 2rem; padding: .5rem .25rem .5rem 1rem; text-align: center; line-height: 1.2; height: 2rem; font-size: .875rem; z-index: 5;}
+        .btn-rule a{ text-decoration: none;color: #fff;}
+
+        .tips-items{ }
+        .tips-items:after{content: '';display: block; clear: both; heig: 0;width: 0;}
+        .tips-cell{ width: 31%; padding-left: 17%; float: left; background: url(http://cdn.ylsjf.com/cdn/images/pageV1/activity/hongbao/dialog_tips.png) left top no-repeat; background-size:  100% 100%; min-height: 4.75rem}
+        .tips-cell:last-child{ float: right; background-position: right top; background-image: url(http://cdn.ylsjf.com/cdn/images/pageV1/activity/hongbao/dialog_tips_02.png);}
+
+        .panel-cell{display: flex; display: -webkit-flex; justify-content: center;-webkit-justify-content: center; background-color: #fff; border-radius: .5rem; padding: .75rem 2%; width: 80%; margin: 0 auto}
+        .cell-items{ width: 50%; text-align: center; color: #b8524f }
+
+        .panel-info{  background-color: #fffac2;  border-radius: .5rem; padding:.5rem; color: #e7544e }
+        .panel-info .panel-head{ font-size: 1.125rem;  color: #5a5753; padding: .5rem 0 0}
+        .panel-info .panel-body{ padding:0 .25rem  }
+        .panel-info .panel-body p{ padding-top: .5rem; padding-left: 1rem; position: relative; font-size: .875rem}
+        .panel-info .panel-body .p-index{ position: absolute; left: 0; top: .5rem}
+
+        .panel-pager{ text-align: center; padding:0 0 1rem; color: #999 }
+        .panel-pager .prev,
+        .panel-pager .next{ padding:0 1rem; color: #43564f}
+        .panel-pager .prev.disable,
+        .panel-pager .next.disable{ color: #999}
+
+
+        .block-form{ margin:1.5rem auto 0; width: 84%; padding: 1rem 3%;  background:#fff; border-radius: .25rem;  position: relative }
+        .form-avatar{text-align: center;transform: translate(0, -2.875rem); }
+        .form-avatar img{ width: 4rem; height: 4rem; border-radius: 999rem; box-shadow: 0 0 0 .25rem #fff;  display: inline-block;margin: 0 auto}
+        .form-cell{ margin:1em 0 .25rem 0; background-color: white;border-radius: .25em;  overflow: hidden}
+        .form-cell-bottom{margin:1rem 0 .25rem 0;}
+        .form-cell-tips{font-size: .875rem; text-align: center;}
+        .ipt-circle{border-radius: .25rem; border: 0; width: 94%;padding: .75rem 3%;font-size: 1rem;color: #542a1c;-webkit-appearance: none; background-color: #F6F6F6}
+        .btn-get{border-radius: .25em;  width: 94%;padding: .75rem 3%;font-size: 1rem;color: #fff ; background: #FF4F57;
+            background: -webkit-linear-gradient(#FF4F57, #FF4F57); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#FF4F57, #FF4F57); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#FF4F57, #FF4F57); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#FF4F57, #FF4F57); /* 标准的语法 */  text-decoration: none;display: block; text-align: center;
+        }
+        .btn-get-code{width: 94%;padding: .625rem 3%;font-size: 1rem;color: #fff; background-color:#FF4F57;text-decoration: none; text-align: center; border-radius: .25rem}
+
+        .form-l{ float: left;width: 45% !important}
+        .form-r{ float: right;width: 40% !important;}
+
+        .number-per{ border:1px solid rgba(45,45,45,.5); color: rgba(45,45,45,1); padding: .25rem .5rem; border-radius: .25rem; font-size: .875rem; position: absolute; left: 1rem; top: 1.5rem}
+        .number-per:after{border:1px solid rgba(45,45,45,.5); content:'6月第一期'; color: rgba(0,0,0,0); position: absolute; left: .125rem; top: .125rem;padding: .25rem .5rem;border-radius: .25rem; font-size: .875rem; white-space:nowrap; word-break: keep-all }
+        @keyframes doughnut {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .5;transform: translate(15%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @keyframes doughnut-2 {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .45;transform: translate(17%,20%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @keyframes doughnut-3 {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .75;transform: translate(20%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @-webkit-keyframes  doughnut {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .5;transform: translate(15%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        .doughnut{ width: 5rem; height: 5rem;
+            background: #FFD800;
+            background: -webkit-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* 标准的语法 */
+            background-size: 100%; border-radius: 999rem; overflow: hidden; ;
+            position: absolute; right: 11rem; top: 2rem; animation: doughnut-3 12s infinite;-webkit-animation: doughnut-3 12s infinite; opacity: 0 }
+        .doughnut.doughnut-a{ width: 15rem; height: 15rem; animation: doughnut-2 13s infinite;-webkit-animation: doughnut-2 13s infinite; right: 0rem;top: -12rem;}
+        .doughnut.doughnut-b{ width: 12rem; height: 12rem; animation: doughnut 15s infinite;-webkit-animation: doughnut 15s infinite; left: inherit; right: 19rem;top:-7rem;}
+        .doughnut.doughnut-c{ width: 7.5rem; height: 7.5rem; animation: doughnut-2 14s infinite;-webkit-animation: doughnut-2 14s infinite; left: inherit; right: 8rem;top:2rem;}
+        .doughnut.doughnut-d{ width: 9rem; height: 9rem; animation: doughnut 6s infinite;-webkit-animation: doughnut 12s infinite; left: inherit; right: 6.5rem;top: 9.5rem;}
+        .doughnut.doughnut-e{ width: 7rem; height: 7rem; animation: doughnut-3 9s infinite;-webkit-animation: doughnut-3 9s infinite; left: inherit; right: 3rem;top: 2.5rem;}
+
+        .panel-box{ background-color: #fff; border-radius: .5rem; margin: 1.5rem 1.5rem 0; padding: 1rem }
+        .flex-cell{ display: flex; display: -webkit-flex; justify-content: space-around}
+
+        .avatar-coll{ text-align: center}
+        .avatar-img{ width: 1.75rem; height: 1.75rem; border-radius: 999rem;box-shadow: 0 0 0 1px #fff; display: inline-block; margin-left: -.375rem }
+        .avatar-dot{ transform: translateY(-.5rem); display: inline-block; font-weight: bold}
+
+        .box-column{ display: flex; display: -webkit-flex; justify-content: space-between;-webkit-justify-content: space-between; padding:0 5%}
+        .box-column .panel-info{ width: 44% ;}
+
+        .emo-joy,
+        .emo-sad{ width: 1rem; height: 1rem; vertical-align: middle}
+        .emo-cell span{ vertical-align: middle}
+
+        .avatar-big{ width: 4rem; height: 4rem;border-radius: 999rem; transform: translateY(1.5rem); position: relative;z-index: 0}
+        .mark-avatar{ width: 6rem; margin-top: 0; position: relative; z-index: 1}
+
+
+        .banner-record{ position: absolute; left: 0; top: 0;width: 100%}
+        .list-body{ padding: 1rem 0}
+        .list-items{ background-color: #fff; padding: .5rem 1.5rem; margin-top: .5rem}
+        .flex-cell-around{justify-content: space-between;-webkit-justify-content: space-between}
+        .list-icon{width: 1.125rem;vertical-align: sub; border-radius: 9999rem;}
+        .panel-info{ padding: .5rem 1rem; background-color:#fffae5; color: #666; font-size: .875rem }
+        .list-items-tit{ color: #222; font-weight: 500; padding-left: 1rem }
+        /******/
+        .control-bottom{ border-top:1px solid #e6e6e6;position: fixed; bottom: 0; left: 0;width: 100%; background-color: #fff; padding: .75rem 0; z-index: 10;transform: translateY(7.5em);-webkit-transform: translateY(7.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom:after{content: ''; clear: both; height: 0;width: 0;display: block;}
+        .control-bottom a{ display: block;width: 90%; margin:0 5%; box-sizing: border-box; border-radius: 999rem; padding: .5rem 0;  float: left; text-align: center; text-decoration: none; color: #999; font-size: 1.125rem; background-color: #fa6b5b; color: #fff; }
+        .control-bottom.active{ transform: translateY(0);-webkit-transform: translateY(0);}
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px;  background: #f6f6f6; z-index: 5}
+            /*导航操作栏上移*/
+            .control-bottom { padding-bottom: 34px;  }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container" data-draw="yes">
+    <div class="box top-box">
+        <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_bg.png" width="100%">
+
+        <div class="text-center banner-record">
+            <div class="text-top padding-top-2rem">86.52</div>
+            <div class="padding-top-0_5rem text-black">累计赚取（元）</div>
+            <div class="flex-cell padding-top-2rem">
+                <div class="text-black">已参与：3次</div>
+                <div class="text-right text-black">成功：1次&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;失败：3次</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="list-body">
+        <div class=" text-grey padding-left-1rem padding-bottom-0_5rem"><b>战绩明细</b></div>
+
+        <div class="list-items">
+            <div class="flex-cell flex-cell-around padding-bottom-0_5rem">
+                <div class="   list-items-tit">2018年第二期</div>
+                <div class="padding-right-1rem">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_10.png"  class="list-icon">
+                    <span class="text-info"><b>挑战中</b></span>
+                </div>
+            </div>
+
+            <div class="panel-info">
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+            </div>
+
+            <div class="text-min text-grey padding-left-1rem padding-top-0_5rem  padding-bottom-0_5rem">
+                参与方式：分享免费参与
+            </div>
+        </div>
+
+        <div class="list-items">
+            <div class="flex-cell flex-cell-around padding-bottom-0_5rem">
+                <div class="   list-items-tit">2018年第二期</div>
+                <div class="padding-right-1rem">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_09.png"  class="list-icon">
+                    <span class="text-info"><b>奖励23.22元</b></span>
+                </div>
+            </div>
+
+            <div class="panel-info">
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+            </div>
+
+            <div class="text-min text-grey padding-left-1rem padding-top-0_5rem  padding-bottom-0_5rem">
+                参与方式：消耗1000积分
+            </div>
+        </div>
+
+        <div class="list-items">
+            <div class="flex-cell flex-cell-around padding-bottom-0_5rem">
+                <div class=" list-items-tit">2018年第二期</div>
+                <div class="padding-right-1rem">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_11.png"  class="list-icon">
+                    <span class="text-info"><b>挑战失败</b></span>
+                </div>
+            </div>
+
+            <div class="panel-info">
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+                <div class="flex-cell flex-cell-around">
+                    <div>奖励总额：10000</div>
+                    <div class="text-right">成功：10</div>
+                </div>
+            </div>
+
+            <div class="text-min text-grey padding-left-1rem padding-top-0_5rem  padding-bottom-0_5rem">
+                参与方式：消耗1000积分
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="http://cdn.51zhangba.com/cdn/lib/zepto/zepto.min.js"></script>
+
+<script>
+    (function(){
+        var preventDefault = function (e) {
+            e.preventDefault();
+        };
+
+        //TODO 重新设置alert样式
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+        window.confirm = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.confirm(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+
+    })(window);
+
+</script>
+
+</html>

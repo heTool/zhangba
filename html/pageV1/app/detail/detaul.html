@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="帐吧">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <title>详情</title>
+    <style>
+        *{padding: 0;margin: 0;color: #646464;transition: all .25s; -webkit-transition: all .25s;}
+        html{ font-size: 100%}
+        @media screen and ( max-width: 340px) {
+            html{ font-size: 87.5%}
+        }
+        body{background-color:#fff; font-size: .875rem; line-height: 1.5}
+        .text-black{color: #333;}
+        .text-gray{color: #999;}
+        .text-red{ color: #ff4040;}
+        .text-max{ font-size: 1rem;}
+        .text-min{ font-size: .75rem;}
+        .padding-left-1{padding-left: 1rem}
+        .container{}
+        .text-center{ text-align: center;}
+        .text-right{ text-align: right;}
+        .tips{ font-size: .75rem; color: #ff4040;}
+        .tips-gray{ font-size: .75rem; color: #999;}
+        i{ font-weight: normal; font-style: normal}
+
+        .padding-0_5rem{ padding: .5rem}
+        .padding-left-0_5rem{ padding-left: .5rem}
+        .padding-top-0_5rem{ padding-top: .5rem}
+        .padding-right-0_5rem{ padding-right: .5rem}
+        .padding-bottom-0_5rem{ padding-bottom: .5rem}
+
+        .padding-1rem{ padding: 1rem}
+        .padding-left-1rem{ padding-left: 1rem}
+        .padding-top-1rem{ padding-top: 1rem}
+        .padding-right-1rem{ padding-right: 1rem}
+        .padding-bottom-1rem{ padding-bottom: 1rem}
+
+        .padding-2rem{ padding: 2rem}
+        .padding-left-2rem{ padding-left: 2rem}
+        .padding-top-2rem{ padding-top: 2rem}
+        .padding-right-2rem{ padding-right: 2rem}
+        .padding-bottom-2rem{ padding-bottom: 2rem}
+
+        .tab-tit{ width: 100%; background-color: #fff; border-bottom: 1px solid #e6e6e6; position: fixed; top: 0; z-index: 99; display: flex; display: -webkit-flex;  flex-wrap: nowrap;-webkit-flex-wrap: nowrap }
+        .tab-tit li{width: 33%;  list-style:none; text-align: center; font-size: 1rem}
+        .tab-tit li a{ text-decoration: none;display: inline-block; padding: .75rem 0; border-bottom: 2px solid transparent;}
+        .tab-tit li.active a{ color: #ff4040; border-bottom: 2px solid #ff4040;}
+        .tab-body{}
+        .tab-cont{ display: block; padding-top: 2.8rem; }
+        .tab-cont.fadeOut{ display:none }
+
+        .box{   }
+        .box-top-border{ border-top: 1px solid rgb(238,238,238) }
+        .box.box-text{ padding: 1rem}
+        .box.box-img{ padding:1rem 2rem 2rem}
+        .box img{ display: block; margin:0 auto;}
+        .tab-box{}
+        .tab-box-top{ background: url(http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_bg_01.png) right bottom no-repeat; background-size: 60%}
+        .tab-box-middle{ background: url(http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_bg_02.png) right bottom no-repeat; background-size: 100%}
+
+        h2{color: #333; font-weight: 700;  font-size: 1.075rem; padding:1rem 0  .25rem; }
+        h3{color: #333; font-weight: 700;  font-size: 1rem; padding:1rem 0  .25rem; }
+        h3.box-tit-circle{ background-color: #e7e7e7; border-radius: 999rem; padding: 0; display: inline-block; padding-right: 1rem}
+        h3.box-tit-circle span{border-radius: 999rem; background-color: #b0b0b0; color: #fff; display: inline-block;width: 1.5rem; height: 1.5rem; line-height: 1.5; text-align: center}
+        h3.box-tit{ text-align: center; position: relative; line-height: 2; padding-top: 0}
+        h2.box-tit{ text-align: center; position: relative; line-height: 2; padding-top: 0}
+        h3.box-tit:after,
+        h2.box-tit:after{content: ''; display: block;width: 8%;border-bottom: .175rem solid #ff4040; position: absolute; left: 46%;  bottom: 0}
+
+        h4.box-tit-sub{
+            font-weight: normal; line-height: 1;
+            font-size: 1rem; text-align: center; color: rgb(102,102,102); width: 60%; margin: 2rem auto 0;
+            background: url('http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_line_01.png') left center repeat-x; background-size: 18%;
+
+        }
+        h4.box-tit-sub span{ background-color: #fff; padding: 0 .5rem }
+
+
+        h5.box-tit-min{color: #333; font-weight: bold; padding: .675rem 0 0 0; font-size: 1rem;position: relative; z-index: 2;}
+        h5.box-tit-min span{position: relative; z-index: 1; color: #333}
+        h5.box-tit-min em{color: #ff4040;}
+
+        h5.box-tit-min:after{ content: 'ONE'; font-size: 4rem; font-style: italic; color: #f7f7f7; position: absolute; left: 0; top: -1rem; z-index: 0}
+        h5.box-tit-min.nth-child-2:after{ content: 'TWO'; }
+        h5.box-tit-min.nth-child-3:after{ content: 'THREE'; }
+        h5.box-tit-min.nth-child-4:after{ content: 'FOUR'; }
+        h5.box-tit-min+p{ position: relative; z-index: 2}
+
+        p{ color: #646464; line-height: 1.75}
+        p.supple-info{ text-indent: 2rem; color: #969696; font-size: .8rem;}
+
+        .table-box{ margin-top: .25rem}
+        table{ border-right:1px solid rgb(238,238,238);border-top:1px solid rgb(238,238,238)}
+        table a{text-decoration: none}
+        table tr{}
+        table tr td,
+        table tr th{ border-left:1px solid rgb(238,238,238);border-bottom:1px solid rgb(238,238,238); padding: .5rem; line-height: 1.75}
+        table tr th{  font-weight: normal}
+        table tr td{ font-size: .75rem}
+        table tr td:first-child{ padding:.25rem .5rem; line-height: 1.25 }
+        table tr td:nth-child(2){  text-align: center }
+        table tr td:last-child{  text-align: center }
+        .box table tr td img{ display: inline; vertical-align: middle}
+        .mark{ border-radius: 999rem; font-size: .675rem; color: #ff4040; border: 1px solid #ff4040; line-height: .75; padding:0 .25rem}
+        .table-box-items{ margin-top: .5rem; margin-left: -2rem; margin-right: -2rem}
+        .table-box-items table{ border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; border-left: 0; border-right: 0}
+        .table-box-items tr td{ border:0}
+
+        .box-block{ display: flex; display: -webkit-flex; justify-content: space-between ;-webkit-justify-content: space-between; align-items: center;-webkit-align-items: center;}
+        .box-items{}
+        .box-block.arrow-line{position: relative}
+        .box-block.arrow-line:after{ content: ''; display: block; height: 12rem; width: .125rem;position: absolute; background-color: #ff4040; top: 5rem; right: 49.5%}
+        .box-block.arrow-line:before{ content: ''; display: block; position: absolute;border:.375rem solid transparent; border-top:.5rem solid #ff4040;right: 48.15%;
+            top:17rem;}
+        .box-items-30{width: 30%}
+        .box-items-70{width: 70%}
+
+        .copyright{ text-align: center; padding: .5rem 0; background-color: #efefef; margin-top: -1px}
+        .copyright img{ display: block; margin: 0 auto;}
+
+        .tab-cont img{ display: block}
+
+        /*****/
+        /***dialog***/
+        .dialog{ background-color: rgba(0,0,0,.6); left: 0; top: 0;position: fixed; z-index: 6; width: 100%; height: 100%; display:none; z-index: 100 }
+        .dialog.active{ display: block }
+        .dialog-panel{ position: fixed;left: 0; width: 100%; background: #fff; top:0;}
+        .dialog-head{ padding: 24px 0 12px 0; position: relative}
+        .dialog-head .tit{ text-align: center; font-size: 1.125rem; }
+        .dialog-head.no-border:before{ display: none}
+        .dialog-head:before{content: ''; display: block; position: absolute; left: 46%; bottom: 0; width: 8%; border-bottom: 4px solid #e8e8e8; }
+        .panel-head h1{ font-size: 48px; color: #000}
+        .dialog-close{ font-size: 48px; font-weight: lighter; right: 16px; top:-12px; position: absolute; color: #999; cursor: pointer}
+        .dialog-body{ padding: 24px; -webkit-overflow-scrolling: touch;  overflow-y: scroll; min-height: 300px;  }
+        .dialog-body iframe{}
+        .dialog-foot{ padding: 12px;}
+
+
+        .dialog-view a{ color: #333; text-decoration: none; border-bottom: 1px solid #333; cursor: pointer}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--选项卡-S-->
+    <ul class="tab-tit" id="tab-title">
+        <li class="active"><a href="javascript:;">项目详情</a></li>
+        <li><a href="javascript:;">风险提示</a></li>
+        <li><a href="javascript:;">安全保障</a></li>
+    </ul>
+
+    <!--选项卡-E-->
+    <div class="tab-body">
+        <!--选项卡详情-项目详情-S-->
+        <div class="tab-cont ">
+            <div class="box box-text">
+                <div class="text-gray text-max padding-top-1rem"><b class="text-black padding-right-0_5rem">投资期限</b>  34天</div>
+                <div class="text-gray text-max padding-top-0_5rem"><b class="text-black padding-right-0_5rem">项目金额</b>  </div>
+                <div class="text-gray text-max padding-top-0_5rem"><b class="text-black padding-right-0_5rem">近3个月年化收益</b>  15%</div>
+                <div class="text-gray text-max padding-top-0_5rem"><b class="text-black padding-right-0_5rem">回款方式</b>  到期还本付息</div>
+            </div>
+
+            <div class="box box-text ">
+                <h3 class="box-top-border">项目简介</h3>
+                <p class="padding-top-0_5rem">借款企业为某大型机械有限公司。公司主要从事数控机床生产、销售业务，企业生产检测设备齐全，拥有雄厚的技术力量和先进的设备。企业具有完善的上下游销售渠道。企业借款用途为资金经营周转。该公司上下游产业链资金往来明晰，流动性充沛，可以保障按时支付借款。企业征信信用记录良好，无相关法律诉讼。公司借款资金账户由有理树金服监管，确保资金用于真实借款用途，不被挪作他用。经营收入回款亦由人人爱家金融监管，确保回款用于支付用户本息。本期债权额度XX万元，本期债权已加入风险准备金优先兑付计划，确保用户本息安全。</p>
+            </div>
+
+            <div class="box box-text ">
+                <h3 class="box-top-border">担保措施</h3>
+                <p>1、经营资金账户监管</p>
+                <p>2、股权质押</p>
+                <p>3、第三方机构连带担保</p>
+            </div>
+
+            <div class="box box-text ">
+                <h3 class="box-top-border">还款来源</h3>
+                <p>1、该公司正常经营还款</p>
+                <p>2、公司法定代表人承担无限连带责任保证</p>
+                <p>3、某大型融资租赁公司承担无限连带责任</p>
+                <p>4、风险准备金优先兑付</p>
+            </div>
+
+            <div class="box box-text ">
+                <h3 class="box-top-border">资料清单</h3>
+                <p class="dialog-view" data-btn="dialog-show" data-tit="营业执照">1、营业执照</p>
+                <p class="dialog-view" data-btn="dialog-show" data-tit="法人身份证">2、法人身份证</p>
+                <p class="dialog-view" ><a href="javascript:;" target="_blank">3、融资顾问合同</a></p>
+                <p class="dialog-view"><a href="javascript:;" target="_blank">4、借款合同</a></p>
+            </div>
+
+        </div>
+        <!--选项卡详情-项目详情-E-->
+
+        <!--选项卡详情-风险提示-S-->
+        <div class="tab-cont fadeOut">
+            <div class="box box-text">
+                <br>
+                <p>由于本项目受市场、政策、法律等各种因素的影响，有理树为综合金融服务平台，不向本项目提供任何形式的担保，不承诺保本付息，无论是明示或暗示的。有理树提供的各种信息及资料仅供参考，不构成任何投资建议或引导，投资人应依其独立判断做出决策并承担由此带来的投资风险。</p>
+                <p>因此请您在投资本项目时，对项目风险务必要有清醒的认识，并根据自身的风险承受能力及资产情况、收入状况、风险偏好等，结合以往的投资经验综合考虑是否投资本项目。</p>
+                <p>包括但不限于以下风险：</p>
+                <h3>（一）市场风险 </h3>
+                <p>市场风险是指债权标的的预期收益因受经济因素、政治因素和交易制度等各种因素影响而引起的波动，导致收益水平变化而产生的风险。市场风险主要包括：政策风险、经济周期风险、利率风险和购买力风险。</p>
+                <h3>（二）信息风险</h3>
+                <p>信息风险是指在项目运作过程中，因信息中介方的知识、经验、判断等会影响其对获取的信息的判断。若信息中介方获取的信息不够全面、准确将可能导致投资人判断有误，从而影响最终的投资收益。</p>
+                <h3>（三）违约风险</h3>
+                <p>违约风险是指项目融资方因死亡、失踪、停业、解散、撤销、破产，或者被有关监管机构撤销相关业务许可等原因导致不能按时履行还款职责的风险。</p>
+                <h3>（四）技术风险</h3>
+                <p>技术风险是指因本项目通过互联网信息技术平台进行信息撮合成交，因此可能存在信息技术系统故障的风险。</p>
+                <h3>（五）操作风险</h3>
+                <p>操作风险是指相关人员在业务操作过程中，因操作失误或操作不规范而引起的风险。</p>
+                <h3>（六）不可抗力因素导致的风险</h3>
+                <p>不可抗力风险是指遭受无法预见、无法克服、无法避免等不可抗力的客观情况所导致的项目无法按时还款的风险，包括但不限于洪水、地震及其它自然灾害、战争、骚乱、火灾、突发性公共卫生事件、政府征用、没收、法律法规变化或其他突发事件、项目相关方非正常的暂停或终止业务等。</p>
+            </div>
+        </div>
+        <!--选项卡详情-风险提示-E-->
+
+        <!--选项卡详情-安全保障-S-->
+        <div class="tab-cont fadeOut">
+            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_03.png" width="100%">
+            <div class="tab-box tab-box-top">
+                <div class="box box-text ">
+                    <h3 class="box-tit">做好信息中介</h3>
+                    <p class="padding-top-0_5rem">
+                        不介入借贷资金交易，只撮合和匹配投融资信息，通过去中心化和去信用中介化，为投资者实现利益最大化。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h3 class="box-tit">专注小额分散</h3>
+                    <p class="padding-top-0_5rem">
+                        通过大数据智能投顾系统，将资金实时匹配到海量低风险贷款标的，以一对多模式降低投资风险。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h3 class="box-tit">极致用户体验</h3>
+                    <p class="padding-top-0_5rem">
+                        一流的产品、运营和技术团队，深耕互联网行业十余载，精准定位用户需求，追求简洁、流畅的产品使用体验，为投资者提供专业化的服务。
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-box tab-box-middle">
+                <div class="box box-text ">
+                    <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_line_02.png" width="100%" class="padding-bottom-2rem">
+                    <h2 class="box-tit">风控是第一防护线</h2>
+                    <h4 class="box-tit-sub"><span>四重安全防护</span></h4>
+                </div>
+
+                <div class="box box-text ">
+                    <h5 class="box-tit-min"><span><em>01</em> 专业风控团队</span></h5>
+                    <p class="padding-top-0_5rem">
+                        来自银行、国内外知名金融机构的风险管理人员，建立严苛的进件标准及流程。从贷前审查到贷后管理，将业务过程中各环节的工作职责科学分解，采用“双人实地调查”原则，实现相互制约和支持。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h5 class="box-tit-min nth-child-2"><span><em>02</em> 真实借款项目</span></h5>
+                    <p class="padding-top-0_5rem">
+                        借款项目严格遵循审核流程，多维度核查借款人信息，有凭证可追溯，透明无虚假，确保项目真实可靠。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h5 class="box-tit-min nth-child-3"><span><em>03</em> 反欺诈分析</span></h5>
+                    <p class="padding-top-0_5rem">
+                        引入智能风险管理反欺诈系统，通过事前预测，事中监测预警，事后关联分析，全程实时监测业务潜在威胁，动态预警业务欺诈风险，及时阻断欺诈操作。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h5 class="box-tit-min nth-child-4"><span><em>04</em> 大数据征信</span></h5>
+                    <p class="padding-top-0_5rem">
+                        通过大数据分析建立风控模型，固化到决策引擎和评分卡系统，建立信贷工厂模式的风控审核系统，通过超过2000个维度进行交叉智能分析，规避借款客户的违约风险。
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h4 class="box-tit-sub"><span>三大核心技术</span></h4>
+                    <div class="box-block padding-1rem">
+                        <div class="box-items padding-top-1rem">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_a_01.png" width="50%">
+                            <div class="text-center text-black padding-top-0_5rem"><b class="text-black">设备指纹</b></div>
+                        </div>
+                        <div class="box-items padding-top-1rem">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_a_02.png" width="50%">
+                            <div class="text-center text-black padding-top-0_5rem"><b class="text-black">风控引擎</b></div>
+                        </div>
+                        <div  class="box-items padding-top-1rem">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_a_03.png" width="50%">
+                            <div class="text-center padding-top-0_5rem"><b class="text-black">机器学习</b></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-text ">
+                    <h4 class="box-tit-sub"><span>两套风控流程</span></h4>
+                    <div class="box-block arrow-line  padding-1rem">
+                        <div class="box-items padding-top-1rem ">
+                            <div class="text-center"><b class="text-black">个人计划</b></div>
+                            <div class=" text-black padding-top-0_5rem">1. 基础信息申请</div>
+                            <div class=" text-black padding-top-0_5rem">2. 核验多头借贷</div>
+                            <div class=" text-black padding-top-0_5rem">3. 身份反欺诈核验</div>
+                            <div class=" text-black padding-top-0_5rem">4. 授权爬取信用评分</div>
+                            <div class=" text-black padding-top-0_5rem">5. 风险审核</div>
+                            <div class=" text-black padding-top-0_5rem">6. 法大大电子签章</div>
+                            <div class=" text-black padding-top-0_5rem">7. 授信放款</div>
+                            <div class=" text-black padding-top-0_5rem">8. 贷后管理</div>
+                            <div class=" text-black padding-top-0_5rem">9. 大数据催收</div>
+                        </div>
+                        <div class="box-items padding-top-1rem">
+                            <div class="text-center"><b class="text-black">企业计划</b></div>
+                            <div class=" text-black padding-top-0_5rem">1. 甄选低风险资产</div>
+                            <div class=" text-black padding-top-0_5rem">2. 大数据征信审核</div>
+                            <div class=" text-black padding-top-0_5rem">3. 实地尽调考察</div>
+                            <div class=" text-black padding-top-0_5rem">4. 风控审查反馈沟通</div>
+                            <div class=" text-black padding-top-0_5rem">5. 专员项目跟踪</div>
+                            <div class=" text-black padding-top-0_5rem">6. 审贷会评审</div>
+                            <div class=" text-black padding-top-0_5rem">7. 签署合同放款</div>
+                            <div class=" text-black padding-top-0_5rem">8. 持续性监管</div>
+                            <div class=" text-black padding-top-0_5rem">9. 项目贷后管理</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-box tab-box-bottom">
+                <div class="box box-text ">
+                    <h3 class="box-tit">看得见的资金安全</h3>
+                    <p class="padding-top-1rem">
+                        <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_15_new.png" width="100%">
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <h3 class=" box-tit-circle"><span>Q</span> 什么是质量保障计划？</h3>
+                    <p class="padding-top-1rem">
+                        质量保障计划是有理树金服为保护平台全体投资用户权益而设立的风险保障机制。是指在平台发生的适用本计划下的每笔借款成交后，有理树要求提供借款人推荐服务的合作机构依据其借款人推荐业务规模提取一定比例的金额计入“保证金账户”。当借款项目出现逾期时，将使用保证金对逾期债权进行偿付。<b class="text-black">注：该计划适用于在本平台的所有投资行为，投资人无需为此支付任何费用。</b>
+                    </p>
+                </div>
+
+                <div class="box box-text ">
+                    <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_line_02.png" width="100%" class="padding-bottom-2rem">
+                    <h2 class="box-tit">强大的技术支持</h2>
+                    <div class="box-block padding-top-1rem">
+                        <div class="box-items box-items-30">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_b_01.png" width="50%">
+                        </div>
+                        <div class="box-items box-items-70">
+                            <div><b class=" text-black">隐私保护</b></div>
+                            <div class="padding-top-0_5rem">采用HTTPS加密传输技术，保护用户隐私；严格用户信息操作规范，从流程上确保用户信息不被泄露。</div>
+                        </div>
+                    </div>
+                    <div class="box-block padding-top-1rem">
+                        <div class="box-items box-items-30">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_b_02.png" width="50%">
+                        </div>
+                        <div class="box-items box-items-70">
+                            <div><b class=" text-black">系统安全</b></div>
+                            <div class="padding-top-0_5rem">引入阿里云技术，支持安全套接层协议和128位加密技术；采取各种合适的物理、电子和管理方面的措施保护数据。</div>
+                        </div>
+                    </div>
+                    <div class="box-block padding-top-1rem">
+                        <div class="box-items box-items-30">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_icon_b_03.png" width="50%">
+                        </div>
+                        <div class="box-items box-items-70">
+                            <div><b class="text-black">容灾机制</b></div>
+                            <div class="padding-top-0_5rem">采用机房备份、远程备份、云备份三级备份模式，确保数据零丢失，保障业务的可靠性和连续性。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-text ">
+                    <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_line_02.png" width="100%" class="padding-bottom-2rem">
+                    <h2 class="box-tit">你的权益法律来保障</h2>
+                    <p class="padding-top-1rem">有理树金服聘用大成律师事务所和璟祐律师事务所为平台常年法律顾问，为平台投资者提供法律支持及保障。</p>
+                </div>
+
+                <div class="box box-text ">
+                    <h4 class="box-tit-sub"><span>权威伙伴</span></h4>
+                    <div class="box-block padding-1rem">
+                        <div class="box-items padding-top-1rem">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_pt_01.png" width="85%">
+                        </div>
+                        <div class="box-items padding-top-1rem">
+                            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/detail/y_d_pt_02.png" width="85%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--选项卡详情-安全保障-E-->
+    </div>
+</div>
+
+<div class="dialog">
+    <div class="dialog-panel">
+        <div class="dialog-head">
+            <h1 class="tit">营业执照</h1>
+            <span class="dialog-close"><img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/activity/invite/icon_close.png" width="80%" data-close="dialog"> </span>
+        </div>
+        <div class="dialog-body">
+            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/web/default/qr_down.png" width="100%">
+            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/web/default/qr_down.png" width="100%">
+            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/web/default/qr_down.png" width="100%">
+            <img src="http://oymk3w5v9.bkt.clouddn.com/cdn/images/pageV1/web/default/qr_down.png" width="100%">
+        </div>
+        <div class="dialog-foot">&nbsp;</div>
+    </div>
+</div>
+
+<script src="http://oymk3w5v9.bkt.clouddn.com/cdn/lib/zepto/zepto.min.js"></script>
+<style>
+    .lazy { display: none; }
+</style>
+<script>
+    (function(){
+        var _tabTitle   = $('#tab-title li');
+        var _tabCont    = $('div.tab-cont');
+        _tabTitle.on('click',function(){
+            var $this = $(this);
+            _tabTitle.removeClass('active');
+            $this.addClass('active');
+            _tabCont.hide().eq($this.index()).show(0);
+        });
+        //TODO
+
+        $('.dialog-body').css({'height':($(window).height()-$('.dialog-head').height()-72)+'px'})
+
+        $('[data-btn="dialog-show"]').on('click',function(){
+            $('.dialog').addClass('active');
+
+            var tit = $(this).attr('data-tit');
+            if(tit){
+                $('.dialog .tit').html(tit);
+            }else{
+                $('.dialog .tit').html('');
+            }
+        });
+
+        $('[data-close="dialog"]').on('click',function(){
+            $(this).parents('.dialog').removeClass('active');
+        });
+
+    })($);
+
+</script>
+
+</body>
+</html>

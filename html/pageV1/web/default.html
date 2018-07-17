@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="帐吧-记账是一种生活方式">
+    <meta name="description" content="帐吧-记账是一种生活方式">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/facicon_128X128.png">
+    <title>帐吧-记账是一种生活方式</title>
+    <link href="http://cdn.51zhangba.com/cdn/images/pageV1/iconfonts/iconfont.css" type="text/css" rel="stylesheet">
+    <style>
+        /**reset***/
+
+        @font-face {
+            font-family: 'ygytkj';
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/ygytkj.ttf');
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/ygytkj.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'syt';
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/syt.otf');
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/syt.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'fzltZCH';
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/fzltZCHgbk.ttf');
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/fzltZCHgbk.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'bdzyj';
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/bdzyjt.ttf');
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/bdzyjt.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'PingFang Regular';
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/PingFang%20Regular.ttf');
+            src: url('http://cdn.51zhangba.com/cdn/images/pageV1/font/PingFang%20Regular.woff') format('woff');
+        }
+
+
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        @-webkit-keyframes loadPage {
+            from{ opacity: 0}
+        }
+        @-ms-keyframes loadPage {
+            from{ opacity: 0}
+        }
+        *{padding: 0;margin: 0;font-family: '苹方','Microsoft YaHei', arial, helvetica, sans-serif;}
+        img{border: none;animation: loadpage 1s; -webkit-animation: loadPage 1s; opacity:1 }
+        html{font-size:100%; line-height: 1.5;  }
+
+        body{ background-color: #fff;color: #333;}
+        .text-center{text-align: center}
+        .text-left{text-align: left}
+        .text-min{font-size: 13px;}
+        .text-tips{font-size: 12px; color: #999}
+        .text-gray{ color: #b3b3b3}
+        .text-black{ color: #333}
+        .text-red{ color: #ff4040}
+        .text-right{ text-align: right}
+        .text-left{ text-align: left}
+
+        .padding-0_5em{ padding: 6px}
+        .padding-left-0_5em{ padding-left: 6px}
+        .padding-top-0_5em{padding-top:6px}
+        .padding-right-0_5em{padding-right:6px}
+        .padding-bottom-0_5em{padding-bottom:6px}
+
+        .padding-1em{ padding: 12px}
+        .padding-left-1em{ padding-left: 12px}
+        .padding-top-1em{padding-top:12px}
+        .padding-right-1em{padding-right:12px}
+        .padding-bottom-1em{padding-bottom: 12px}
+
+        .padding-2em{ padding: 24px}
+        .padding-left-2em{ padding-left: 24px}
+        .padding-top-2em{padding-top:24px}
+        .padding-right-2em{padding-right:24px}
+        .padding-bottom-2em{padding-bottom: 24px}
+
+        .padding-top-5em{padding-top:60px}
+
+        .line-height-1_5{ line-height: 1.75}
+
+        /**comm**/
+        .warp{ min-width: 920px}
+        .container{ min-width: 920px; max-width: 1170px; margin: 0 auto;}
+        .container:after{content: ''; display: block; clear: both; height: 0;width: 0}
+        .container-tit{ font-size: 40px; font-weight: bold; text-align: center; position: relative; padding: 36px 0;}
+
+        .btn{padding: 12px;  background-color: #ffd828; color: #000; text-decoration: none; transition: all .25s;-webkit-transition: all .25s;-ms-transition: all .25s; border-radius: 8px;}
+        .btn:hover{background-color: #FDDE52; }
+
+        /****/
+        .logo img{ display: block}
+        .nav ul{ padding-top: 48px;}
+        .nav ul li{ width: 120px; list-style: none; float: right; text-align: right}
+        .nav ul li:first-child{ width: auto; padding-left: 50px;  }
+        .nav ul li a{ text-decoration: none;  color: #333; display: inline-block; border-bottom: 4px solid transparent; padding:0 5px 20px 5px;  }
+        .nav ul li.active a{  color: #EF5742;border-bottom-color:#EF5742}
+        .nav ul li a:hover{  color: #EF5742;}
+
+
+        .col{ width: 100%; display: block; box-sizing: border-box;}
+        .col:after{content: ''; display: block; clear: both;height: 0;width: 0;}
+        .col>.col-cell{ display: block;  float: left; width: 100%; box-sizing: border-box; }
+        .col-offset{content: '-';visibility: hidden;display: block;float: left;}
+        .col-1>.col-cell{  width: 100%;}
+        .col-2>.col-cell{ width: 50%;}
+        .col-2>.col-cell.col-cell-full{ width: 100%;}
+        .col-2.col-offset-1:before{content: '-';visibility: hidden;display: block;float: left;width: 50%; }
+        .col-3>.col-cell{ width: 33.33%;}
+        .col-3>.col-cell.col-cell-2{ width: 66.66%;}
+        .col-3>.col-cell.col-cell-full{ width: 100%;}
+        .col-3.col-offset-1:before{content: '-';visibility: hidden;display: block;float: left;width: 33.33%; }
+        .col-3.col-offset-2:before{content: '-';visibility: hidden;display: block;float: left;width: 66.66%; }
+        .col-4>.col-cell{ width:25%;}
+        .col-4>.col-cell.col-cell-2{ width:50%;}
+        .col-4>.col-cell.col-cell-3{ width:75%;}
+        .col-4>.col-cell.col-cell-full{ width:10%;}
+        .col-4.col-offset-1:before{content: '-';visibility: hidden;display: block;float: left;width: 25%; }
+        .col-4.col-offset-2:before{content: '-';visibility: hidden;display: block;float: left;width: 50%; }
+        .col-4.col-offset-3:before{content: '-';visibility: hidden;display: block;float: left;width: 75%; }
+        .col-5>.col-cell{ width:20%;}
+        .col-5>.col-cell.col-cell-2{ width:40%;}
+        .col-5>.col-cell.col-cell-3{ width:60%;}
+        .col-5>.col-cell.col-cell-4{ width:80%;}
+        .col-5>.col-cell.col-cell-full{ width:100%;}
+        .col-5.col-offset-1:before{content: '-';visibility: hidden;display: block;float: left;width: 20%; }
+        .col-5.col-offset-2:before{content: '-';visibility: hidden;display: block;float: left;width: 40%; }
+        .col-5.col-offset-3:before{content: '-';visibility: hidden;display: block;float: left;width: 60%; }
+        .col-5.col-offset-4:before{content: '-';visibility: hidden;display: block;float: left;width: 80%; }
+        .col-6>.col-cell{ width:16.66%;}
+        .col-6>.col-cell.col-cell-2{ width:33.33%;}
+        .col-6>.col-cell.col-cell-3{ width:49.99%;}
+        .col-6>.col-cell.col-cell-4{ width:66.66%;}
+        .col-6>.col-cell.col-cell-5{ width:83.33%;}
+        .col-6>.col-cell.col-cell-full{ width:100%;}
+        .col-6.col-offset-1:before{content: '-';visibility: hidden;display: block;float: left;width: 16.66%;}
+        .col-6.col-offset-2:before{content: '-';visibility: hidden;display: block;float: left;width: 33.33%; }
+        .col-6.col-offset-3:before{content: '-';visibility: hidden;display: block;float: left;width: 49.99%; }
+        .col-6.col-offset-4:before{content: '-';visibility: hidden;display: block;float: left;width: 66.66%; }
+        .col-6.col-offset-5:before{content: '-';visibility: hidden;display: block;float: left;width: 83.33%; }
+        .col-7>.col-cell.col-cell-2{ width:28.57%;}
+        .col-7>.col-cell.col-cell-3{ width:42.84%;}
+        .col-7>.col-cell.col-cell-4{ width:57.10%;}
+        .col-7>.col-cell.col-cell-5{ width:71.42%;}
+        .col-7>.col-cell.col-cell-6{ width:85.71%;}
+        .col-7>.col-cell.col-cell-full{ width:100%;}
+        /***top slider**/
+
+        .top-slider{ background-color: #000; background: url('http://cdn.51zhangba.com/images/pageV1/web/default/zb_d_top_banner_01.jpg') top center no-repeat; background-size: cover; min-height: 694px;position: relative; overflow: hidden}
+        .slider-box{ width: 100%; height: 694px; overflow: hidden;position:absolute; left: 0; top: 0;z-index: 0; white-space: nowrap;}
+
+        .slider-img{ width: 100%; height: 694px; position: absolute;left: 0; top: 0; width: 100%;height: 694px;background: url('http://cdn.51zhangba.com/images/pageV1/web/default/zb_d_top_banner_01.jpg') top center no-repeat;
+            background-size: cover; opacity: 0;transition: all 1.5s;-webkit-transition: all 1.5s;-ms-transition: all 1.5s;   }
+        .slider-img.slider-img-a{ background-image: url('http://cdn.51zhangba.com/images/pageV1/web/default/zb_d_top_banner_01.jpg');}
+        .slider-img.slider-img-b{ background-image: url('http://cdn.51zhangba.com/images/pageV1/web/default/zb_d_top_banner_02.jpg');}
+        .slider-img.slider-img-c{ background-image: url('http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_top_banner_03.jpg');}
+        .slider-img.moveout-left{    transform: translateX(-100%); -webkit-transform: translateX(-150%); -ms-transform: translateX(-150%);  transition: all 1.5s;}
+        .slider-img.moveout-right{    transform: translateX(100%); -webkit-transform: translateX(150%); -ms-transform: translateX(150%);  transition: all 1.5s;}
+        .slider-img.show{opacity: 1}
+
+
+        .top-slider .container{ position: relative;z-index: 12}
+
+        .slogan{ font-size:78px; color: #fff;color: rgba(255,255,255,.85); text-align: center; padding-top: 300px; font-family: ygy;
+            text-shadow: 0 0 15px #000;text-shadow: 0 0 15px rgba(0,0,0,.5 );-ms-text-shadow: 0 0 15px rgba(0,0,0,.5 ); opacity: 0; transition: all 5s;  }
+        .slogan.show{  opacity: 1 }
+        .slogan-sub{font-family: ygytkj;font-size: 60px; color: #fff;text-shadow: 0 0 15px rgba(0,0,0,.35 );-webkit-text-shadow: 0 0 15px rgba(0,0,0,.35 );-ms-text-shadow: 0 0 15px rgba(0,0,0,.35 );}
+        .slogan-dsp{font-size: 18px; color: #fff;text-shadow: 0 0 5px rgba(0,0,0,.5 );-webkit-text-shadow: 0 0 5px rgba(0,0,0,.5 );-ms-text-shadow: 0 0 5px rgba(0,0,0,.5 );}
+        .slogan-btn{ text-align: center; padding-top: 48px; width: 100%; position: absolute;left: 0; bottom: 170px;}
+        .slogan-btn .btn{padding:12px 36px; border-radius: 999px; background-color: #000; font-size: 24px; line-height: 1; margin:0 20px; color: #fff }
+        .slogan-btn .btn:hover{background-color: #ffd828; color: #000}
+
+        .slider-step{ text-align: center;position: absolute; width: 100%; bottom: 35px; z-index: 12}
+        .slider-step .slider-step-cell { border-radius: 999px; height: 8px; width: 8px; background-color:transparent;
+            box-shadow: 0 0 0 2px #fff;-webkit-box-shadow: 0 0 0 2px #fff;-ms-box-shadow: 0 0 0 2px #fff; display: inline-block; margin:  0 12px; cursor: pointer;
+            transition: all .5s; -webkit-transition: all .5s; -ms-transition: all .5s;  }
+        .slider-step .slider-step-cell.active{  box-shadow: 0 0 0 2px #ffcc33;-webkit-box-shadow: 0 0 0 2px #ffcc33; -ms-box-shadow: 0 0 0 2px #ffcc33; background-color: #ffcc33 }
+
+        .slider-img-a .slogan-sub{ transform: translate(7%,150px); -webkit-transform: translate(7%,150px);-ms-transform: translate(7%,150px); opacity: 0}
+        .slider-img-a .slogan-dsp{ transform: translate(7%,250px); -webkit-transform: translate(7%,250px); -ms-transform: translate(7%,250px); opacity: 0}
+        .slider-img-a.show .slogan-sub{ transform: translate(7%,200px);-webkit-transform: translate(7%,200px);-ms-transform: translate(7%,200px); opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s; -ms-transition: all .75s .5s;}
+        .slider-img-a.show .slogan-dsp{ transform: translate(7%,200px);-webkit-transform: translate(7%,200px);-ms-transform: translate(7%,200px); opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s;-ms-transition: all .75s .5s;}
+
+        .slider-img-b .slogan-sub{ transform: translate(60%,180px);-webkit-transform: translate(60%,180px);-ms-transform: translate(60%,180px);opacity: 0}
+        .slider-img-b .slogan-dsp{ transform: translate(60%,280px);-webkit-transform: translate(60%,280px);-ms-transform: translate(60%,280px);opacity: 0}
+        .slider-img-b.show .slogan-sub{ transform: translate(60%,230px);-webkit-transform: translate(60%,230px);-webkit-transform: translate(60%,230px);opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s;-ms-transition: all .75s .5s;}
+        .slider-img-b.show .slogan-dsp{ transform: translate(60%,230px);-webkit-transform: translate(60%,230px);-ms-transform: translate(60%,230px);opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s;-ms-transition: all .75s .5s;}
+
+        .slider-img-c .slogan-sub{ transform: translate(41%,70px);-webkit-transform: translate(41%,70px);-ms-transform: translate(41%,70px);opacity: 0}
+        .slider-img-c .slogan-dsp{ transform: translate(41%,170px);-webkit-transform: translate(41%,170px);-ms-transform: translate(41%,170px);opacity: 0}
+        .slider-img-c.show .slogan-sub{ transform: translate(41%,120px);-webkit-transform: translate(41%,120px);-ms-transform: translate(41%,120px);opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s;-ms-transition: all .75s .5s;}
+        .slider-img-c.show .slogan-dsp{ transform: translate(41%,120px);-webkit-transform: translate(41%,120px);-ms-transform: translate(41%,120px);opacity: 1;
+            transition: all .75s .5s;-webkit-transition: all .75s .5s; -ms-transition: all .75s .5s;}
+
+        /*.slider-left,*/
+        /*.slider-right{ position: absolute; left: 0; top: 0; z-index: 11;font-size: 70px; width: 50px; padding:0 10px; height: 694px; color: rgba(255,216,40,1); text-shadow: 0 2px 5px rgba(0,0,0,.5); cursor: pointer; line-height: 694px;transform: translate(-100px,0);-webkit-transform: translate(-100px,0);-ms-transform: translate(-100px,0);transition: all .5s;-webkit-transition: all .5s;-ms-transition: all .5s;}*/
+        /*.slider-right{ right: 0; left: auto; text-align: right; transform: translate(100px,0);-webkit-transform: translate(100px,0);-ms-transform: translate(100px,0); }*/
+        /*.top-slider:hover .slider-left{ transform: translate(0,0)}*/
+        /*.top-slider:hover .slider-right{ transform: translate(0,0)}*/
+        /******/
+        .section{ min-width: 920px}
+        .section.yellow{ background-color: #ffd828}
+        .section .col-cell{position: relative}
+        .section .col-cell.text{position: relative;  padding-top: 100px}
+        .img-play{box-shadow: 0 0 15px rgba(128,128,128,.5); width: 41%;opacity: 0; transition: all .75s;transform: translate(0,0); -webkit-transform:  translate(0,0);-ms-transform:  translate(0,0); }
+        .img-play:first-child{transform: translate(0,0); -webkit-transform:  translate(0,0);-ms--transform:  translate(0,0); }
+        .img-play:last-child{transform: translate(10%,20%);-webkit-transform: translate(10%,20%);-ms-transform: translate(10%,20%)}
+        .img-play.first-child-active{transform: translate(20%,0); -webkit-transform:  translate(20%,0);-ms-transform:  translate(20%,0); opacity: 1}
+        .img-play.last-child-active{transform: translate(-5%,20%);-webkit-transform: translate(-5%,20%);-ms-transform: translate(-5%,20%); opacity: 1; transition-delay: .5s; -wekit-transition-delay: .5s;-ms-transition-delay: .5s}
+        .sec-tit-box{ position: relative; padding-right: 20%}
+        .sec-tit-box.left{ position: relative; padding-right: inherit; padding-left: 15%}
+        .sec-tit-box:before{ content: '';display: block;position: absolute; width: 190px; height: 120px; box-shadow: 0 0 0 0  #fff;  top: 50px; right: 15%; z-index: 1;
+            transition: all .25s 1s;-webkit-transition: all .5s 1.5s;-ms-transition: all .5s 1.5s; }
+        .sec-tit-box.left:before{ content: '';display: block;position: absolute; width: 190px; height: 120px; box-shadow: 0 0 0 0  #ffd828; right: auto; top: 50px; left: 10%; z-index: 1}
+        .sec-idx{ font-size: 80px; color: #333; font-family: bdzyj; position: relative; z-index: 2; line-height: 1; right: -10px; font-weight: 300}
+        .sec-tit{font-size: 50px; color: #000; font-family: fzltZCH; position: relative; z-index: 2; font-weight: 300; line-height: 1; padding-top: 20px;}
+        .sec-sub{font-size: 24px;font-family: "PingFang Regular"; padding: 80px 20% 0 0; white-space: nowrap;word-break: keep-all}
+        .sec-idx.left{  right: inherit; left: 10%}
+        .sec-sub.left{padding: 80px 0 0 15% }
+        .black .sec-tit-box:before{ box-shadow: 0 0 0 0  #ffd828;-ms-box-shadow: 0 0 0 0  #ffd828;}
+        .sec-tit-box.active:before{  box-shadow:0 0 0 12px  #fff;-ms-box-shadow:0 0 0 12px  #fff;}
+        .sec-tit-box.active.left:before{ box-shadow: 0 0 0 12px  #ffd828;-ms-box-shadow: 0 0 0 12px  #ffd828;}
+        .black .sec-tit-box.active:before{ box-shadow: 0 0 0 12px  #ffd828;-ms-box-shadow: 0 0 0 12px  #ffd828;}
+        .black .sec-tit,
+        .black .sec-idx{color: #fff;}
+        /***section-a***/
+        .section-a{ padding: 80px 0 180px}
+        /****/
+        .section-b{ padding: 80px 0 180px}
+        /****/
+        .section-c{ padding: 80px 0 180px; background-color: #1a1a1a; color: #fff;}
+
+        /***brand**/
+        .brand{ background: url('http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_bottom_banner.jpg')  bottom center no-repeat; background-size: cover; min-height: 560px; padding-top: 120px;  position: relative; z-index: 1; color: white}
+        .brand-box{ margin-top: 60px; position: relative;z-index: 3; line-height: 1.75}
+
+        /***partner**/
+        .partner{ background-color: #000; color:#fff; padding: 10px 0 40px 0}
+        .pop-box{ display: inline-block}
+        .partner a.pop{ text-decoration: none;font-size: 40px;  width: 60px; height: 60px;background-color: #fff; color: #333; border-radius: 999px; display: inline-block; text-align: center; transition: all .5s; -webkit-transition: all .5s;-ms-transition: all .5s;}
+        .icon.iconfont{  line-height: 1; display: inline-block;font-size: 32px;}
+        .partner a.pop:hover{ background-color: #ffd828; color: #000}
+
+            
+        /*****/
+        
+        .footer{ font-size: 13px; background-color: #000; text-align: center; color: #999; padding: 12px; line-height: 1 ;border-top: solid 1px #2d2d2d}
+
+        /***dialog***/
+        .dialog{ background-color: rgba(0,0,0,.6); left: 0; top: 0;position: fixed; z-index: 96; width: 100%; height: 100%; display:none }
+        .dialog.active{ display: block }
+        .dialog-panel{ position: fixed;left: 30%; width: 40%; background: #fff; top: 15%; border-radius: 8px; min-width: 508px}
+        .panel-head{ padding: 24px 0 12px 0; position: relative}
+        .panel-head.no-border:before{ display: none}
+
+        .panel-head h1{ font-size: 36px; color: #333}
+        .dialog-close{ font-size: 48px; font-weight: lighter; right: 36px; top:0; position: absolute; color: #333; cursor: pointer; font-weight: 100;}
+        .dialog-close .icon{transition: all .5s;}
+        .dialog-close:hover .icon{ color: #ffd828; background-color: #000; border-radius: 999px}
+        .panel-body{ padding: 24px;}
+        .panel-foot{ padding: 24px;}
+
+        .pop-box .pop.pop-circle{ border-radius: 999px;box-shadow: 0 0 0 1px #000; color: #000; display: inline-block;width: 36px; height: 36px; line-height: 1; padding: 10px; transition: all .25s;}
+        .pop-box .pop.pop-circle:hover{ color: #ffd828; background-color: #000;box-shadow: 0 0 0 1px #ffd828;}
+        .pop-box{ position: relative}
+        .pop-box .pop-box-img{ position: absolute; width: 180px; position: absolute ;left: -30px; bottom: 120px; opacity: 0; transition: all .5s; -webkit-transition: all .5s; -ms-transition:all .5s;}
+        .pop-box .pop-box-img.show{ opacity: 1}
+
+        .form-items{ padding: 16px 0 0; margin:  0 auto; width: 60%}
+        .form-control{font-size: 14px; padding:12px 2%; text-align: center; display: block; width: 100%; margin: 0 auto; box-sizing: border-box; border:1px solid #ccc;border-radius: 10px; background-color: #fff;outline: none;
+            -webkit-appearance: none;}
+        .form-control::placeholder { text-align: left}
+        .form-items.form-items-code .form-control{ width: 40%; float: left; }
+        .form-items.form-items-code .btn{ width: 57%;float: left; padding: 11px 0; margin-left: 3%}
+        .form-items:after{ content: ''; display: block;height: 0; width: 0; clear: both}
+        .form-items .btn{ width: 100%; display: block; margin: 0 auto; padding: 12px 0}
+        
+        @media (max-width: 950px) {
+            .form-items{  width: 80%}
+            .dialog-panel{ min-width: 350px}
+        }
+        @-webkit-media (max-width: 950px) {
+            .form-items{  width: 80%}
+            .dialog-panel{ min-width: 350px}
+        }
+        @-ms-media (max-width: 950px) {
+            .form-items{  width: 80%}
+            .dialog-panel{ min-width: 350px}
+        }
+
+        a.blue-link,
+        .nav a.blue-link{ color: #448de1; text-decoration: none }
+        a.blue-link:hover,
+        .nav a.blue-link:hover{ color: #195497;text-decoration: none }
+
+        .adapter{ height: 0; overflow: hidden; transition: all .5s;-webkit-transition: all .5s;-ms-transition: all .5s; background-color: #FFF8D7; line-height: 40px}
+        .adapter.show{height: 40px;}
+
+    </style>
+</head>
+<body>
+<div class="adapter ">
+    <div class="container text-center">
+        帐吧官网暂兼容IE9以上浏览器，便于您的使用，请更新您的浏览器！<a class="link close-adapter"  href="javascript:;" >知道了</a>
+    </div>
+
+</div>
+<div class="warp">
+    <div class="container col col-2">
+        <div class="col-cell logo"><a href="https://www.51zhangba.com"><img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_logo_436X94.png" alt="https://www.51zhangba.com"></a></div>
+        <div class="col-cell nav">
+            <ul>
+                <li><a href="javascript:;" data-btn="login">登录帐吧</a></li>
+                <li><a href="uploadBill.html">上传账单</a></li>
+                <li class="active"><a href="default.html">首&nbsp;页</a></li>
+            </ul>
+        </div>
+    </div>
+    <!---->
+    <div class="top-slider">
+        <div class="slider-box" data-idx-cover="0">
+            <div class="slider-img slider-img-a ">
+                <div class="container">
+                    <div class="slogan-sub">跟糊涂账说拜拜</div>
+                    <div class="slogan-dsp">
+                        拿着五千的工资，花着八千的消费！<br>
+                        开始了解自己的收支情况，才能远离“隐性穷人”。
+                    </div>
+                </div>
+            </div>
+            <div class="slider-img slider-img-b ">
+                <div class="container">
+                    <div class="slogan-sub">让生活有记可循</div>
+                    <div class="slogan-dsp">
+                        2018年6月我一共花了7124.8元，其中购物占比52%。<br>
+                        下个月给自己定个小目标：多记账，少剁手！
+                    </div>
+                </div>
+            </div>
+            <div class="slider-img slider-img-c ">
+                <div class="container">
+                    <div class="slogan-sub">养成良好记账习惯</div>
+                    <div class="slogan-dsp">
+                        随时随地，随手随记。<br>
+                        “动手”理财之初，“坚持”致富之本。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---->
+        <div class="text-center slogan-btn">
+            <a href="javascript:;" class="btn">iPhone版</a>
+            <a href="javascript:;" class="btn">Android版</a>
+        </div>
+
+
+        <div class="slider-step">
+            <span class="slider-step-cell active">&nbsp;</span>
+            <span class="slider-step-cell">&nbsp;</span>
+            <span class="slider-step-cell">&nbsp;</span>
+        </div>
+    </div>
+
+    <!--info section a-->
+    <div class="section section-a yellow">
+        <div class="container">
+            <div class="col col-2">
+                <div class="col-cell">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_01_01.png" class="img-play">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_01_02.png" class="img-play">
+                </div>
+                <div class="col-cell text text-right">
+                    <div class="sec-tit-box">
+                        <h2 class="sec-idx">01</h2>
+                        <h3 class="sec-tit">专为懒癌设计</h3>
+                    </div>
+                    <div class="sec-sub">一笔笔手动记账太烦太累难坚持<br>账单导入、截图同步，自动记账so easy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--info section b-->
+    <div class="section section-b ">
+        <div class="container">
+            <div class="col col-2">
+                <div class="col-cell text text-left">
+                    <div class="sec-tit-box left">
+                        <h2 class="sec-idx">02</h2>
+                        <h3 class="sec-tit">轻松看懂财务</h3>
+                    </div>
+                    <div class="sec-sub left">多维度的统计分析，清晰你的资金流向<br>钱花哪儿一目了然</div>
+                </div>
+                <div class="col-cell">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_02_01.png" class="img-play">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_02_02.png" class="img-play">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--info section c-->
+    <div class="section section-c black">
+        <div class="container">
+            <div class="col col-2">
+                <div class="col-cell">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_03_01.png" class="img-play">
+                    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/zb_d_section_03_02.png" class="img-play">
+                </div>
+                <div class="col-cell text text-right">
+                    <div class="sec-tit-box">
+                        <h2 class="sec-idx">03</h2>
+                        <h3 class="sec-tit">简记账轻生活</h3>
+                    </div>
+                    <div class="sec-sub">快来创建你的第一笔账吧<br>还有更多精彩等你发现</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--brand-->
+    <div class="brand">
+        <div class="container">
+            <h1 class="container-tit">让每一次记录都有意义</h1>
+            <div class="text-center">
+               <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/qr_code_500X500.png" width="160">
+                <div class="padding-top-1em">扫码下载</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--partner-->
+    <div class="partner">
+        <div class="container">
+            <h1 class="container-tit">联系我们</h1>
+
+            <div class="col col-7">
+                <div class="col-cell col-cell-4">
+                    <div class="padding-left-1em line-height-1_5">
+                        <div class="padding-top-1em"><br><b>浙江孔明信息科技有限公司</b></div>
+                        <div class="">地址：杭州市余杭区古墩路旺君国际2005室</div>
+                        <div class="">客服热线：400-019-8880</div>
+                        <div class="">服务时间：9:00-21:00</div>
+                    </div>
+                </div>
+
+
+                <div class="col-cell col-cell-3">
+                    <div class="padding-top-5em text-right">
+                        <div class="text-center pop-box">
+                            <a href="http://weibo.com/zhangbar" target="_blank" class="pop">
+                                <span class="icon iconfont icon-weibo"></span>
+                            </a>
+                            <div class="padding-top-1em">新浪微博</div>
+                        </div>
+
+                        <div  class="text-center pop-box padding-left-2em">
+                            <img src="http://cdn.51zhangba.com/cdn/images/pageV1/web/default/wx_service_qr640X640.jpg" class="pop-box-img">
+                            <a href="javascript:;" class="pop pop-wx-service">
+                                <span class="icon iconfont icon-weixin"></span>
+                            </a>
+                            <div class="padding-top-1em">微信服务号</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div>浙ICP备17048075号-1 版权所有 &copy; 浙江孔明信息科技有限公司</div>
+        </div>
+    </div>
+
+</div>
+
+<!--get login-->
+<div class="dialog" data-dialog="login" >
+    <div class="dialog-panel text-center">
+        <div class="panel-head">
+            <h1>登&nbsp;&nbsp;&nbsp;&nbsp;录</h1>
+            <span class="dialog-close">
+                <span class="icon iconfont icon-cuowu"></span>
+            </span>
+        </div>
+        <div class="panel-body">
+
+            <div class="form-items">
+                <input type="text" class="form-control" placeholder="输入手机号领取新人礼">
+            </div>
+            <div class="form-items form-items-code">
+                <input type="text" class="form-control" placeholder="输入验证码"> <a href="javascript:;" class="btn">点击获取验证码</a>
+            </div>
+
+            <div class="form-items text-right text-gray">
+                收不到短信？试试<a href="javascript:;" class="blue-link">语音验证码</a>
+            </div>
+            <div class="form-items">
+                <a href="#" class="btn">立即领取</a>
+            </div>
+        </div>
+        <div class="panel-foot">
+            <div class="text-center padding-bottom-2em text-gray">快捷登陆</div>
+            <div class="pop-box padding-right-2em">
+                <a href="javascript:;" class="pop pop-circle"> <span class="icon iconfont icon-qq "></span></a>
+                <div class="padding-top-0_5em text-gray">QQ</div>
+            </div>
+            <div class="pop-box padding-left-2em">
+                <a href="javascript:;" class="pop pop-circle"><span class="icon iconfont icon-weixin "></span></a>
+                <div class="padding-top-0_5em text-gray">微信</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://cdn.51zhangba.com/cdn/lib/jquery/jquery-1.11.3.min.js"></script>
+<script>
+    (function(){
+
+
+        //TODO adapter
+        function IEVersion() {
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+            var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+            if (isIE) {
+                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                reIE.test(userAgent);
+                var fIEVersion = parseFloat(RegExp["$1"]);
+                if (fIEVersion == 7) {
+                    return 7;
+                } else if (fIEVersion == 8) {
+                    return 8;
+                } else if (fIEVersion == 9) {
+                    return 9;
+                } else if (fIEVersion == 10) {
+                    return 10;
+                } else {
+                    return 6;//IE版本<=7
+                }
+            } else if (isEdge) {
+                return 'edge';//edge
+            } else if (isIE11) {
+                return 11; //IE11
+            } else {
+                return -1;//不是ie浏览器
+            }
+        }
+
+        var IEVersion =IEVersion();
+        //TODO 设置更新浏览器cookie
+        function setIEUpdateStatusMsg ( ){
+            document.cookie = ';setIEUpdateStatusMsg=true;'
+        }
+        //TODO 确定用户是否知晓更新浏览器
+        console.log(document.cookie);
+        if(document.cookie.indexOf('setIEUpdateStatusMsg=true')<0){
+            //TODO是否IE8以下
+            if(0<IEVersion&&IEVersion<9 && IEVersion!='edge'){
+                $('.adapter ').addClass('show');
+            }
+        }
+
+        $('.close-adapter').on('click',function(){
+
+            $('.adapter').removeClass('show');
+            //设置cookie 知晓要更新浏览器
+            setIEUpdateStatusMsg();
+        })
+
+
+
+        var setTimerA,setTimerB,setTimerC;
+        $(window).on('scroll',function(e){
+            var y = (e.currentTarget.pageXOffset !== undefined) ? e.currentTarget.pageYOffset : (e.currentTarget.parentNode || e.currentTarget).scrollTop;
+
+            if(y>1700){
+                if( $('.section-c .img-play').hasClass('first-child-active')) return;
+                setTimerC = self.setTimeout(function(){
+                    $('.section-c .img-play').eq(0).addClass('first-child-active');
+                    $('.section-c .img-play').eq(1).addClass('last-child-active');
+                    $('.section-c .sec-tit-box').addClass('active');
+                    self.clearTimeout(setTimerC);
+                },20);
+            }else if(y>1000){
+                if( $('.section-b .img-play').hasClass('first-child-active')) return;
+                setTimerB = self.setTimeout(function(){
+                    $('.section-b .img-play').eq(0).addClass('first-child-active');
+                    $('.section-b .img-play').eq(1).addClass('last-child-active');
+                    $('.section-b .sec-tit-box').addClass('active');
+                    self.clearTimeout(setTimerB);
+                },20);
+            }else if(y>400){
+                if( $('.section-a .img-play').hasClass('first-child-active')) return;
+                setTimerA = self.setTimeout(function(){
+                    $('.section-a .img-play').eq(0).addClass('first-child-active');
+                    $('.section-a .img-play').eq(1).addClass('last-child-active');
+                    $('.section-a .sec-tit-box').addClass('active');
+                    self.clearTimeout(setTimerA);
+                },20);
+            }
+        });
+
+        //TODO slider fun
+        var sliderFun = {
+            elem:$('.slider-img'),
+            elemLength:$('.slider-img').length,
+            sliderContainer: $('.slider-box'),
+            autoTurnTimer:'',
+            //设置slider img 层叠值
+            setElemIdx:function(){
+                //只有一张，控件都隐藏
+                if(this.elem.length<=1){
+                    return $('.slider-step,.slider-left,.slider-right').hide();
+                }
+                //
+                this.elem.each(function(n){
+                    $(this).css({'z-index':n});
+                });
+//                //点击左翻页
+//                this.turnLeftFun();
+//                //点击右翻页
+//                this.turnRightFun();
+
+                //添加初始化动画
+                this.elem.eq(0).addClass('show').siblings().removeClass('show');
+                //
+                $('.slider-box').attr('data-idx-cover',0);
+                //
+                this.sliderStepFun(0);
+
+                //点击页码圈直接跳转到具体页面
+                this.turnSliderStepFun();
+            },
+            //
+            setSliderOverTimer:function(){
+                var _this = this;
+                $('.top-slider').on('mouseover',function(){
+                    self.clearTimeout(_this.autoPlayTimer);
+                });
+                $('.top-slider').on('mouseleave',function(){
+                    //
+                    _this.autoTurnFun();
+                })
+            },
+            //
+            turnSliderStepFun:function(){
+                var _this = this;
+                $('.slider-step-cell').on('click',function(){
+                    self.clearInterval(_this.autoTurnTimer);
+                    var currentIdx = $(this).index();
+                    //添加动画
+                    _this.elem.eq(currentIdx).addClass('show').siblings().removeClass('show');
+                    //
+                    $('.slider-box').attr('data-idx-cover',currentIdx);
+                    //
+                    _this.sliderStepFun(currentIdx);
+                    //
+                    _this.autoTurnFun();
+                });
+            },
+            //
+            sliderStepFun:function(i){
+                $('.slider-step-cell').eq(i).addClass('active').siblings().removeClass('active');
+            },
+            //自动切换
+            autoTurnFun:function(){
+                var _this = this;
+                _this.autoPlayTimer = self.setInterval(function(){
+                    var sliderImgIdx = parseInt($('.slider-box').attr('data-idx-cover'))||0;
+                    if(sliderImgIdx>=_this.elem.length-1){
+                        //添加动画
+                        _this.elem.eq(0).addClass('show').siblings().removeClass('show');
+                        //
+                        $('.slider-box').attr('data-idx-cover',0);
+                    }else{
+                        //添加动画
+                        _this.elem.eq(sliderImgIdx+1).addClass('show').siblings().removeClass('show');
+                        //
+                        $('.slider-box').attr('data-idx-cover',sliderImgIdx+1);
+                        //
+                        _this.sliderStepFun(sliderImgIdx+1);
+                    }
+                },5000);
+            },
+            init:function(){
+                this.setElemIdx();
+                //
+                this.autoTurnFun();
+                //
+                this.setSliderOverTimer();
+            }
+        }
+        //TODO init
+        sliderFun.init();
+        //
+
+        //TODO
+        $('[data-btn="login"]').on('click',function(){
+            $('[data-dialog="login"]').addClass('active')
+        });
+
+        $('.dialog-close').on('click',function(){
+            $(this).parents('.dialog').removeClass('active');
+        });
+
+        //TODO
+        $('.pop-wx-service,.pop-box-img').on('click',function(){
+            $('.pop-box-img').toggleClass('show');
+        });
+    })($);
+</script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="记账挑战，赢现金大奖">
+    <meta name="description" content="记账挑战，赢现金大奖">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, viewport-fit=cover,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>记账挑战，赢现金大奖</title>
+    <style>
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        *{padding: 0;margin: 0;font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;animation: loadpage .25s; -webkit-animation: loadPage .25s; opacity:1 }
+        html{font-size:87.5%; line-height: 1.5;   }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+        body{ background-color: #f6f6f6;color: #2a2a2a; padding-bottom: 1rem; }
+
+        .full-body{
+            position: fixed !important;
+            top: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 0% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+        }
+
+        #footerFixed{
+            position: absolute;
+        }
+
+        .block p{ margin-top: .25rem}
+        .box{position: relative; width: 100%; overflow: hidden}
+        .box img{ display: block;}
+        .text-add a{ color: white; text-decoration: none}
+        .text-grey{color:#999}
+        .text-white{ color: #fff}
+        .clearfix:after{content: '';display: block; height: 0;width: 0;overflow: hidden; clear: both}
+        .text-tips{  font-size: .75rem;}
+        .text-tips-min{  font-size: .625rem;}
+        .text-min{  font-size: .875rem;}
+        .text-max{ font-size: 1.75rem}
+        .text-normal{ font-size: 1.375rem}
+        .text-welcome{ font-size: 1.75rem}
+        .text-red{color:#ff1500}
+        .text-blue{color:#65b6f9}
+        .text-brown{color:#8d6b5c}
+        .text-black{color:#555}
+        .text-orange{color: #e7544e}
+        .text-left{ text-align: left}
+        .text-right{ text-align: right}
+        .text-center{ text-align: center}
+        .text-modify{ font-size: 1rem; color: #43564f; border-bottom: 1px solid #43564f; text-decoration: none }
+        .text-nowarp{ word-break: keep-all; white-space: nowrap; }
+        .text-underline{ border-bottom: 1px solid #2a2a2a}
+        .padding-top-1rem{ padding-top: 1rem}
+        .padding-bottom-1rem{ padding-bottom: 1rem}
+        .padding-top-0_5rem{ padding-top: .5rem}
+        .padding-bottom-0_5rem{ padding-bottom: .5rem}
+        .padding-left-1rem{ padding-left: 1rem}
+        .padding-right-1rem{ padding-right: 1rem}
+        .padding-top-2rem{ padding-top: 2rem}
+        .padding-bottom-2rem{ padding-bottom: 2rem}
+        .padding-top-3rem{ padding-top: 3rem}
+        .padding-1rem{ padding: 1rem}
+        .border-top-solid{ border-top:solid 1px #ffe498}
+        .font-weight-300{ font-weight: 300}
+
+        /*****/
+        .footer{font-size: .875rem; line-height: 1.5; text-align: center;padding-bottom: .5rem;}
+        .copyright{ background-color: #ca650a;  padding:.5rem 0 }
+        .copyright img{ max-width: 12rem; display: block; margin: 0 auto}
+
+        table{ margin: 0 auto}
+        table th{ font-weight: normal;padding: .25rem 0; font-size: 1.125rem}
+        table tr td{ padding: .25rem 0; font-size: .875rem}
+
+
+        /****/
+        .box-content{ position: relative }
+        .box-tit{ text-align: center; font-weight: bold; font-size: 1.375rem}
+        .box-dsp{ position: absolute; left: 0; top: 0; width: 100%; text-align: center }
+        .box-dsp img{ display:block; width: 90%;margin: 0 auto }
+        .top-date-box{position: relative}
+        .top-date-txt{position: absolute; left: 0; top: 0; width: 100%;z-index: 0; color: #2a2a2a; font-size: .925rem; text-align: center}
+
+        .tips{ padding: 0 2rem .875rem; color: white; font-size: .5rem}
+        .btn{ border-radius:999rem; font-size: .875rem; color: #2e2e2e; padding:.25rem 1rem;  text-decoration: none;
+            background: #ffde48;
+            background: -webkit-linear-gradient(#ffde48 0%, #fdce37 92%, #fdce37 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ffde48 0%, #fdce37 92%, #fdce37 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ffde48 0%, #fdce37 92%, #fdce37 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ffde48 0%, #fdce37 92%, #fdce37 100%); /* 标准的语法 */
+            text-align: center;
+            font-weight: 300;
+        }
+        .btn.btn-max{font-size:1rem ; padding: .75rem 2rem;  display: inline-block; margin: 0 auto; }
+        .btn.btn-larger{font-size:1.25rem ; padding: .75rem 4rem;  display: inline-block; margin: 0 auto; }
+        .btn.disable{ background: #ccc;
+            background: -webkit-linear-gradient(#ffde48, #ccc); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#ffde48, #ccc); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#ffde48, #ccc); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#ffde48, #ccc); /* 标准的语法 */
+        }
+        .btn.btn-dialog{ background: #e84441;
+            background: -webkit-linear-gradient(#e84441, #e84441); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#e84441, #e84441); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#e84441, #e84441); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#e84441, #e84441); /* 标准的语法 */
+            font-size: 1rem; padding: .5rem 6rem;
+        }
+        .btn.btn-cell{  width: 50%; text-align: center; padding:.75rem 3rem; display: inline-block; font-size: 1rem}
+        .btn-my-rid{ border: 1px solid #fff; color: #fff; padding:  .5rem 4rem; text-decoration: none; border-radius: .5rem}
+
+        .dialog{ position: fixed; left: 0; bottom:0; width: 100%; height: 100%; overflow-y: scroll;  z-index: 15; color: #333;background-color:rgba(0,0,0,.6); }
+        .dialog-panel{ position: absolute; z-index: 17;left: 5%; width: 90%; top:5%; background-color: #fff;border-radius: .5rem; overflow: hidden}
+        .dialog-result .dialog-panel{ background-color: transparent;left: 10%; width: 80%; top:5%;}
+        .dialog-panel-header{  font-size: 1.375rem; text-align: center; padding: 1rem 0 1rem; position: relative;   margin:0 1rem ;}
+        .dialog-result .dialog-panel-header{ background-color: #fa4546;margin: 0;}
+        .dialog-panel-header.border-bottom{ border-bottom: solid 1px #d0d0d0;}
+        .dialog-close{ position: absolute; right:-1rem; top: -.125rem; font-size: 2rem; font-weight: 100; color: #ccc; line-height: 1; padding: 0 .5rem 0 2rem}
+
+        .dialog-panel-content{width: 100%;  z-index: 2;font-size: 14px;   background-size: 100%;}
+        .dialog-panel-content.radius{ border-radius:0 0 .5rem .5rem}
+        .dialog-result .dialog-panel-content{ background: #fa4546 url(http://cdn.ylsjf.com/cdn/images/pageV1/activity/wumenkan/wmk_d_line.png) left bottom repeat-x; background-size: 5%; margin: 0; padding:0 0 2rem 0}
+        .dialog-result .dialog-close{right: 0}
+        .dialog-avatar { border-radius: 999rem; background-color: #fff; width: 28%; margin: 0 auto; padding: 5%;}
+        .dialog-avatar img{ width: 100%; display: block }
+
+        .dialog-panel-content h3{ font-size: 1.125rem; padding-top: 1.5rem; border-top: 1px  solid #F5F5F5; margin-top: 1.5rem; font-weight: bold}
+        .dialog-panel-content h3:first-child{ margin-top: 0; padding-top: 0; border-top: none}
+        .dialog-panel-content p{ font-weight: 300; padding-left: 1rem;position: relative; color: #333;padding-top:.5rem;}
+        .dialog-panel-content p span.remark{  position: absolute; left: 0; top: .5rem;}
+        .dialog-panel-cell{ margin-top: 1em}
+        .dialog-panel-footer{ padding:0 1rem 2rem; text-align: center}
+        .dialog-panel-footer-btn{ display: flex; display:-webkit-flex;}
+        .dialog-result .dialog-panel-footer{ background-color: #fff}
+
+        .text-tel{ font-size: 1rem;}
+        .text-info{ font-size: 1rem;color: #c4403b}
+        .text-val-total{ font-size: 3.5rem; color: #f2e4bd; padding: .5rem 0;}
+        .text-val-bag{ font-size: 3rem; color: #c4403b; line-height: 1}
+        .text-congratulations{ font-size: 1.5rem; color: #f2e4bd; font-weight: bold; }
+
+        .text-gold{ color: #f2e4bd }
+        .text-val-over{ font-size: 1.75rem; color: #999}
+
+        .dialog-share-btn{width: 100%; top: 90%; left: 5%; position: fixed}
+
+
+        .control-bottom{position: fixed;bottom: 0;width: 90%;z-index: 5; padding: 1rem 5%; background-color: white;left: 0; border-top:1px solid #ddd;transform: translateY(7.5em);-webkit-transform: translateY(7.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom.active{opacity: .9; transform: translateY(0);-webkit-transform: translateY(0);}
+        .btn-control{ display: block; border-radius: .25rem;text-align: center; text-decoration: none; padding: .725rem 0;width: 90%; background-color: #cc4f49; color: white; margin: 0 auto; font-size: 1.25rem;}
+        .btn-control.disable{background-color: #999; color: #666;border-bottom: 1px solid #ccc;}
+
+        .btn-rule{ position: fixed; right: 0; top: 2.5rem; background-color:rgba(241,55,55,.75); color: #fff;  border-right: 0; border-radius: 999rem 0 0 999rem;
+            word-break: break-all;white-space: pre-wrap; width: 2rem; padding: .5rem .25rem .5rem 1rem; text-align: center; line-height: 1.2; height: 2rem; font-size: .875rem; z-index: 5;}
+        .btn-rule a{ text-decoration: none;color: #fff;}
+
+        .tips-items{ }
+        .tips-items:after{content: '';display: block; clear: both; heig: 0;width: 0;}
+        .tips-cell{ width: 31%; padding-left: 17%; float: left; background: url(http://cdn.ylsjf.com/cdn/images/pageV1/activity/hongbao/dialog_tips.png) left top no-repeat; background-size:  100% 100%; min-height: 4.75rem}
+        .tips-cell:last-child{ float: right; background-position: right top; background-image: url(http://cdn.ylsjf.com/cdn/images/pageV1/activity/hongbao/dialog_tips_02.png);}
+
+        .panel-cell{display: flex; display: -webkit-flex; justify-content: center;-webkit-justify-content: center; background-color: #fff; border-radius: .5rem; padding: .75rem 2%; width: 80%; margin: 0 auto}
+        .cell-items{ width: 50%; text-align: center; color: #b8524f }
+
+        .panel-info{  background-color: #fffac2;  border-radius: .5rem; padding:.5rem; color: #e7544e }
+        .panel-info .panel-head{ font-size: 1.125rem;  color: #5a5753; padding: .5rem 0 0}
+        .panel-info .panel-body{ padding:0 .25rem  }
+        .panel-info .panel-body p{ padding-top: .5rem; padding-left: 1rem; position: relative; font-size: .875rem}
+        .panel-info .panel-body .p-index{ position: absolute; left: 0; top: .5rem}
+
+        .panel-pager{ text-align: center; padding:0 0 1rem; color: #999 }
+        .panel-pager .prev,
+        .panel-pager .next{ padding:0 1rem; color: #333}
+        .panel-pager .prev.disable,
+        .panel-pager .next.disable{ color: #999}
+
+        .number-per{ border:1px solid rgba(45,45,45,.5); color: rgba(45,45,45,1); padding: .125rem .5rem; border-radius: .25rem; font-size: .875rem; position: absolute; left: 1rem; top: 1.5rem; }
+        .number-per:after{border:1px solid rgba(45,45,45,.5); content:'6月第一期'; color: rgba(0,0,0,0); position: absolute; left: .125rem; top: .125rem;padding: .125rem .5rem;border-radius: .25rem; font-size: .875rem; white-space:nowrap; word-break: keep-all }
+
+        @keyframes doughnut {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .5;transform: translate(15%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @keyframes doughnut-2 {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .45;transform: translate(17%,20%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @keyframes doughnut-3 {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .75;transform: translate(20%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        @-webkit-keyframes  doughnut {
+            0%  {opacity: 0; transform: translate(0,0)}
+            50% {opacity: .5;transform: translate(15%,15%)}
+            100%{opacity: 0; transform: translate(0,0)}
+        }
+        .doughnut{ width: 5rem; height: 5rem;
+            background: #FFD800;
+            background: -webkit-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(rgba(255,216,0,0) 0%, #FFC900 92%, #FFC900 100%); /* 标准的语法 */
+            background-size: 100%; border-radius: 999rem; overflow: hidden; ;
+            position: absolute; right: 11rem; top: 2rem; animation: doughnut-3 12s infinite;-webkit-animation: doughnut-3 12s infinite; opacity: 0 }
+        .doughnut.doughnut-a{ width: 15rem; height: 15rem; animation: doughnut-2 13s infinite;-webkit-animation: doughnut-2 13s infinite; right: 0rem;top: -12rem;}
+        .doughnut.doughnut-b{ width: 12rem; height: 12rem; animation: doughnut 15s infinite;-webkit-animation: doughnut 15s infinite; left: inherit; right: 19rem;top:-7rem;}
+        .doughnut.doughnut-c{ width: 7.5rem; height: 7.5rem; animation: doughnut-2 14s infinite;-webkit-animation: doughnut-2 14s infinite; left: inherit; right: 8rem;top:2rem;}
+        .doughnut.doughnut-d{ width: 9rem; height: 9rem; animation: doughnut 6s infinite;-webkit-animation: doughnut 12s infinite; left: inherit; right: 6.5rem;top: 9.5rem;}
+        .doughnut.doughnut-e{ width: 7rem; height: 7rem; animation: doughnut-3 9s infinite;-webkit-animation: doughnut-3 9s infinite; left: inherit; right: 3rem;top: 2.5rem;}
+
+        .panel-box{ background-color: #fff; border-radius: .5rem; margin: 1.5rem 1.5rem 0; padding: 1rem }
+        .flex-cell{ display: flex; display: -webkit-flex; justify-content: space-around}
+
+        .avatar-coll{ text-align: center}
+        .avatar-img{ width: 1.75rem; height: 1.75rem; border-radius: 999rem;box-shadow: 0 0 0 1px #fff; display: inline-block; margin-left: -.375rem }
+        .avatar-dot{ transform: translateY(-.5rem); display: inline-block; font-weight: bold}
+
+        .box-column{ display: flex; display: -webkit-flex; justify-content: space-between;-webkit-justify-content: space-between; padding:0 5%}
+        .box-column .panel-info{ width: 44% ;}
+
+        .emo-joy,
+        .emo-sad{ width: 1rem; height: 1rem; vertical-align: middle}
+        .emo-cell span{ vertical-align: middle}
+        .emo-cell:first-child{ padding-left:3rem}
+        .emo-cell:last-child{ padding-right:3rem}
+
+        .avatar-big{ width: 4rem; height: 4rem;border-radius: 999rem; transform: translateY(1.5rem); position: relative;z-index: 0}
+        .mark-avatar{ width: 6rem; margin-top: 0; position: relative; z-index: 1}
+
+        .active-coll{ padding: 2rem 1.5rem 1rem; text-align: center}
+        .active-pop{ border-radius: 999rem; padding: .5rem; height: 2rem; width: 2rem; border: 1px solid #999; font-size: 1rem; color: #000; line-height: 1}
+        .active-pop-right{font-size:1.5rem; font-weight: bold; color: #FF4F57; line-height: .825 }
+        .active-pop-error{font-size:1.5rem; font-weight: bold; color: #000; line-height: .825}
+        /******/
+        .control-bottom{ border-top:1px solid #e6e6e6;position: fixed; bottom: 0; left: 0;width: 100%; background-color: #fff; padding: .75rem 0; z-index: 10;transform: translateY(7.5em);-webkit-transform: translateY(7.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom:after{content: ''; clear: both; height: 0;width: 0;display: block;}
+        .control-bottom a{ display: block;width: 90%; margin:0 5%; box-sizing: border-box; border-radius: 999rem; padding: .5rem 0;  float: left; text-align: center; text-decoration: none; color: #999; font-size: 1.125rem; background-color: #fa6b5b; color: #fff; }
+        .control-bottom.active{ transform: translateY(0);-webkit-transform: translateY(0);}
+        
+        .text-money-val{ font-size: 4.5rem; color: #FF4F57; font-weight: 500; white-space: nowrap; word-break: keep-all}
+        .text-unit{ font-size: 2.5rem}
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px;  background: #f6f6f6; z-index: 5}
+            /*导航操作栏上移*/
+            .control-bottom { padding-bottom: 34px;  }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container" data-draw="yes">
+    <div class="box top-box">
+        <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_02_01.png" width="100%">
+        <div class="top-date-box">
+            <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_02_02.png" width="100%">
+            <div class="  top-date-txt">活动时间：2018.6.1-6.7</div>
+        </div>
+        <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" width="100%">
+        <div class="number-per">6月第一期</div>
+
+    </div>
+
+
+    <div class="padding-top-2rem">
+        <div class="box-tit">挑战进行中</div>
+
+        <div class="flex-cell active-coll">
+            <div class="active-pop">
+                <div><b>6.1</b></div>
+                <div><b class="active-pop-right">✓</b></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.2</b></div>
+                <div><b class="active-pop-error">×</b></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.3</b></div>
+                <div><b class="active-pop-error">×</b></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.4</b></div>
+                <div><b class="text-tips-min text-nowarp">去记账</b></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.5</b></div>
+                <div><span class="text-grey text-tips-min text-nowarp">未开始</span></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.6</b></div>
+                <div><span class="text-grey text-tips-min text-nowarp">未开始</span></div>
+            </div>
+            <div class="active-pop">
+                <div><b>6.7</b></div>
+                <div><span class="text-grey text-tips-min text-nowarp">未开始</span></div>
+            </div>
+        </div>
+
+        <div class="panel-foot flex-cell padding-top-1rem">
+            <a href="javascript:;" class="btn btn-max" style="padding:.75rem 3rem ">去记一笔</a>
+            <a href="javascript:;" class="btn btn-max" style="padding:.75rem 3rem ">邀请好友</a>
+        </div>
+
+        <div class="text-center">
+            <div class="padding-top-2rem "><span class="text-underline btn-invite-dialog">邀请记录：已有<span>5</span>位好友注册</span></div>
+            <div class="text-tips text-grey padding-top-1rem">Tips:挑战期间邀请越多好友注册，瓜分到大额奖金的概率就越高喔~</div>
+        </div>
+
+    </div>
+
+    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_04.png" width="100%">
+    <div class="text-center padding-top-1rem text-min">
+        每7天为一期，挑战成功可随机瓜分奖金，<span class="text-red">最高奖励100元</span>
+    </div>
+
+    <div class="panel panel-box">
+        <div class="panel-body">
+            <div class="text-center padding-top-1rem text-money-val">
+                <span class="text-unit">￥</span><span>100,000</span>
+            </div>
+
+            <div class="text-center padding-top-1rem font-weight-300" >
+                <span class="text-red">500,000</span>人正在参与挑战
+            </div>
+
+            <div class="avatar-coll padding-top-1rem">
+                <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-img">
+                <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-img">
+                <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_02.png" class="avatar-img">
+                <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-img">
+                <span class="avatar-dot">···</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="padding-top-2rem">
+        <div class="box-tit">现在可以预约下一期活动</div>
+
+        <div class="text-center">
+            <div class="text-tips text-grey padding-top-1rem">Tips:预约报名后活动开始会有短信提醒，建议提前绑定手机号喔~</div>
+        </div>
+
+        <div class="text-center padding-top-1rem">
+            <a href="javascript:;" class="btn btn-max">6月第二期预约报名</a>
+        </div>
+    </div>
+
+    <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_06.png" width="100%" class="padding-top-2rem">
+    <div class="box box-content">
+        <div class="text-min text-center ">（2018年5月第四期）</div>
+    </div>
+
+    <div class="flex-cell padding-top-1rem">
+        <div class="emo-cell">
+            <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_09.png" class="emo-joy">
+            <span class="text-red">235645</span>
+            <span><b>成功</b></span>
+        </div>
+        <div class="emo-cell">
+            <img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_11.png" class="emo-sad">
+            <span class="text-blue">235645</span>
+            <span><b>失败</b></span>
+        </div>
+    </div>
+
+
+    <div class="flex-cell padding-bottom-2rem padding-top-1rem">
+        <div class="text-center padding-bottom-2rem">
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-big"> </div>
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_16.png" class="mark-avatar"> </div>
+            <div class="text-min">椒盐味的柠檬</div>
+            <div class="text-min text-red">记账354笔</div>
+        </div>
+
+        <div class="text-center padding-bottom-2rem">
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-big"> </div>
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_18.png" class="mark-avatar"> </div>
+            <div class="text-min">椒盐味的柠檬</div>
+            <div class="text-min text-red">瓜分现金66.66元</div>
+        </div>
+
+        <div class="text-center padding-bottom-2rem">
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_03.png" class="avatar-big"> </div>
+            <div><img src="http://cdn.51zhangba.com/cdn/images/pageV1/activity/winCash/wc_20.png" class="mark-avatar"> </div>
+            <div class="text-min">椒盐味的柠檬</div>
+            <div class="text-min text-red">邀请好友354人</div>
+        </div>
+
+    </div>
+</div>
+
+<!--活动规则-->
+<div class="btn-rule"><a href="rule.html">挑战<br>规则</a></div>
+
+
+
+<!--dialog 邀请记录-->
+<div class="dialog dialog-invite-friend" style="display:none ;">`
+    <div class="dialog-panel" style="top: 10%">
+        <div class="dialog-panel-header border-bottom">
+            <div>邀请记录</div>
+            <span class="dialog-close" ui-data="close-dialog"><img src="http://cdn.ylsjf.com/cdn/images/pageV1/activity/wumenkan/close_24X24.png" width="50%"></span>
+        </div>
+
+        <div class="dialog-panel-content text-center radius">
+            <div class="padding-1rem">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="" width="45%">手机号</th>
+                        <th width="55%">注册时间</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            188****1234
+                        </td>
+                        <td>
+                            2018-5-5 12:00:00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            188****1234
+                        </td>
+                        <td>
+                            2018-5-5 12:00:00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            188****1234
+                        </td>
+                        <td>
+                            2018-5-5 12:00:00
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel-pager">
+            <span class="prev disable">上一页</span>
+            |
+            <span class="next">下一页</span>
+        </div>
+    </div>
+</div>
+
+<!--dialog 预约成功-->
+<div class="dialog dialog-appoint" style="display: ;">`
+    <div class="dialog-panel" style="top: 20%">
+        <div class="dialog-panel-header ">
+            <div>&nbsp;</div>
+            <span class="dialog-close" ui-data="close-dialog"><img src="http://cdn.ylsjf.com/cdn/images/pageV1/activity/wumenkan/close_24X24.png" width="50%"></span>
+        </div>
+
+        <div class="dialog-panel-content text-center radius">
+            <div class="text-red text-welcome text-center">嗨~新朋友，欢迎加入帐吧！</div>
+            <div class="padding-bottom-2rem padding-top-1rem">
+                你已经成功报名6月第一期记账挑战活动<br>
+                马上下载APP瓜分现金大奖把~
+            </div>
+        </div>
+
+        <div class="dialog-panel-footer text-center">
+            <a href="javascript:;" class="btn btn-larger">下载APP体验</a>
+        </div>
+    </div>
+</div>
+
+<script src="http://cdn.51zhangba.com/cdn/lib/zepto/zepto.min.js"></script>
+
+<script>
+    (function(){
+        var preventDefault = function (e) {
+            e.preventDefault();
+        };
+
+        //TODO 重新设置alert样式
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+        window.confirm = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.confirm(name);
+            iframe.parentNode.removeChild(iframe);
+        };
+
+
+        /***dialog show **/
+
+        $('.btn-invite-dialog').on('click',function(){
+            $('.dialog-invite-friend').show();
+        });
+
+        /***dialog close**/
+        $('[ui-data="close-dialog"]').on('click',function(){
+            $('.dialog').hide();
+        });
+
+    })(window);
+
+</script>
+
+</html>

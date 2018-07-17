@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="账吧余额">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta content="telephone=no" name="format-detection" />
+    <title>帐吧-余额</title>
+    <style>
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {  margin: 0;  padding: 0;  border: 0;  outline: 0; }
+        html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {  -webkit-text-size-adjust: none; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block;  clear: both; }
+        body { ;font-family:-apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans","Helvetica Neue", sans-serif;  -webkit-text-size-adjust: none;  color: rgb(46,46,46);  background:rgb(248,248,249);  -webkit-text-size-adjust: none;   font-size: .875rem;  line-height: 1.15; }
+        html{font-size:100%; }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+
+        h1, h2, h3, h4, h5, h6 {  font-size: 100%;  font-weight: normal; }
+        * {  margin: 0; padding: 0; }
+        li { list-style: none; }
+        .text-center {text-align: center; }
+        .text-left { text-align: left; }
+        .text-right {text-align: right; }
+        .text-points{ font-size:3.05rem;font-weight: 400 }
+        .text-tips{ font-size: .75rem}
+        .paleGreyThree{color:rgb(248,248,249)}
+        .pinkishGrey{color:rgb(204,204,204)}
+
+        .margin-top-0_5rem{ margin-top: .5rem}
+        .padding-top-0_5rem{ padding-top: .5rem}
+        /**/
+        .container {  min-height: 100%;  padding-bottom: 3rem; }
+
+        /***/
+        .nav {  width: 100%;  height: 3rem;  display: flex; display: -webkit-flex;  justify-content: space-between; -webkit-justify-content: space-between}
+        .nav-left {  padding-left: 1rem;  padding-top: .75rem; }
+        .nav-right {  padding-right: 1rem;  padding-top: .75rem; }
+        .nav-head { padding-top: 1rem;  text-align: center; }
+
+        .panel{background: #2e2e2e;  padding: 1.375rem 1.125rem .75rem; color: white }
+        .panel-head{}
+        .panel-body{padding:2rem 0 1rem; line-height: 1.34; }
+        .panel-foot{}
+
+
+        .list{ padding:0 1.625rem; background-color: #fff; }
+        .list-items{display: flex; display: -webkit-flex; justify-content: space-between;-webkit-justify-content: space-between;padding:1rem 0; align-items: center; -webkit-align-items: center ; border-top: 1px solid rgb(248,248,249)}
+        .list-items:first-child{margin-top: 0; border-top-color: transparent}
+        .items-tit{ font-size: 1rem}
+        .items-cell{}
+        .items-cell:last-child{ text-align: right}
+
+        .pop{color:rgb(153,153,153); box-shadow: 0 0 0 1px rgb(153,153,153); border-radius: 999rem; padding:.25rem 1rem; font-size: .75rem}
+        .pop.pop-yellow{color:rgb( 46,46,46); background-color: rgb(255,216,40); box-shadow: 0 0 0 1px rgb(255,216,40)}
+        .add-tip{color: rgb(242,93,93); font-size: .875rem; font-weight: 600; padding-left: .5rem}
+        .add-tip.max{ font-size: 1.125rem; padding-left: 0}
+        .add-tip.black{ color: rgb(46,46,46)}
+        .pop-btn{
+            /* background: -webkit-linear-gradient(left, rgb( 236,208,148) , rgb(211,175,117)); Safari 5.1 - 6.0 */
+            /* background: -o-linear-gradient(right, rgb( 236,208,148) , rgb(211,175,117)); Opera 11.1 - 12.0 */
+            /* background: -moz-linear-gradient(right, rgb( 236,208,148) , rgb(211,175,117)); Firefox 3.6 - 15 */
+            /* background: linear-gradient(to right,  rgb( 236,208,148) , rgb(211,175,117)); 标准的语法 */
+            border:.075rem solid white;
+            color: white; 
+            box-shadow: none; 
+            padding:.375rem 1.75rem;
+            font-size: 1rem
+        }
+
+        .more{ color:rgb(153,153,153); font-size: .75rem; padding: 1.5rem 0; text-align: center}
+
+        /***iphone x adapter***/
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+            /*增加底部适配层*/
+            .container { height: 100%;  box-sizing: border-box;  padding-bottom: 34px;}
+            .container:after { content: '';  position: fixed;  left: 0;  bottom: 0;  width: 100%;  height: 34px; background:rgb(248,248,249); z-index: 5}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header ">
+        <nav class="nav">
+            <div class="nav-left"></div>
+            <div class="nav-head">积分明细</div>
+            <div class="nav-right"></div>
+        </nav>
+    </header>
+
+    <!---->
+    <div class="panel">
+        <div class="panel-body text-center">
+            <div class="text-points">387465</div>
+            <div class="text-points">
+                <span class="pop pop-btn">提现</span>
+            </div>
+        </div>
+    </div>
+
+    <!---card list-->
+    <div class="list ">
+        <div class="list-items">
+            <div class="items-cell ">
+                <div class="items-tit">参与打卡互动</div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">2018-04-29</div>
+            </div>
+            <div class="items-cell ">
+                <div class="items-tit">  <span class="add-tip max black">+5</span> </div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">余额：18</div>
+            </div>
+        </div>
+
+        <div class="list-items">
+            <div class="items-cell ">
+                <div class="items-tit">设置头像</div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">2018-04-29</div>
+            </div>
+            <div class="items-cell ">
+                <div class="items-tit">  <span class="add-tip max ">+50</span> </div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">余额：18</div>
+            </div>
+        </div>
+
+        <div class="list-items">
+            <div class="items-cell ">
+                <div class="items-tit">关联微信</div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">2018-04-29</div>
+            </div>
+            <div class="items-cell ">
+                <div class="items-tit">  <span class="add-tip max black">+50</span> </div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">余额：18</div>
+            </div>
+        </div>
+
+        <div class="list-items">
+            <div class="items-cell ">
+                <div class="items-tit">绑定手机号</div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">2018-04-29</div>
+            </div>
+            <div class="items-cell ">
+                <div class="items-tit">  <span class="add-tip max">+50</span> </div>
+                <div class="pinkishGrey text-tips padding-top-0_5rem">余额：18</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="more">加载更多</div>
+</div>
+
+
+</body>
+</html>
